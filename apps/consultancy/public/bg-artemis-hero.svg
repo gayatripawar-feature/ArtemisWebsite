@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3840" height="2160" viewBox="0 0 3840 2160" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <!-- Deep base gradients -->
+    <linearGradient id="baseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1932;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a2d4d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#243952;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Radial light center - warm champagne glow -->
+    <radialGradient id="centerLight" cx="50%" cy="45%">
+      <stop offset="0%" style="stop-color:#3a3d35;stop-opacity:0.4" />
+      <stop offset="30%" style="stop-color:#2d3a4d;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#0c1932;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Cyan/electric blue energy glow -->
+    <radialGradient id="energyGlow" cx="50%" cy="40%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:0.08" />
+      <stop offset="40%" style="stop-color:#0099cc;stop-opacity:0.04" />
+      <stop offset="100%" style="stop-color:#004499;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Secondary light sweep -->
+    <linearGradient id="horizontalSweep" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="20%" style="stop-color:#ffffff;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.03" />
+      <stop offset="80%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+
+    <!-- Soft vignette -->
+    <radialGradient id="vignette" cx="50%" cy="48%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.1" />
+      <stop offset="60%" style="stop-color:#ffffff;stop-opacity:0.02" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.3" />
+    </radialGradient>
+
+    <!-- Volumetric light filters -->
+    <filter id="softGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="energyBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+    </filter>
+
+    <!-- Atmospheric fog -->
+    <filter id="fog">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="60" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- Base layer -->
+  <rect width="3840" height="2160" fill="url(#baseGradient)"/>
+
+  <!-- Primary volumetric light shafts -->
+  <ellipse cx="1920" cy="900" rx="800" ry="600" fill="url(#centerLight)"/>
+  
+  <!-- Energy flow paths - flowing lines -->
+  <g filter="url(#energyBlur)" opacity="0.3">
+    <!-- Central vertical energy -->
+    <path d="M 1920 200 Q 1920 600, 1850 1200 Q 1920 1500, 1920 2160" stroke="#00ccff" stroke-width="120" fill="none" stroke-linecap="round"/>
+    <path d="M 1920 200 Q 1980 600, 1950 1200 Q 1920 1500, 1920 2160" stroke="#00aadd" stroke-width="100" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- Left-side energy streams -->
+  <g filter="url(#energyBlur)" opacity="0.25">
+    <path d="M 800 400 Q 1000 800, 900 1400 Q 1100 1800, 800 2160" stroke="#0099bb" stroke-width="90" fill="none" stroke-linecap="round"/>
+    <path d="M 600 300 Q 700 900, 750 1500 Q 600 1900, 400 2160" stroke="#00bbdd" stroke-width="70" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- Right-side energy streams -->
+  <g filter="url(#energyBlur)" opacity="0.25">
+    <path d="M 3040 400 Q 2840 800, 2940 1400 Q 2740 1800, 3040 2160" stroke="#0099bb" stroke-width="90" fill="none" stroke-linecap="round"/>
+    <path d="M 3240 300 Q 3140 900, 3090 1500 Q 3240 1900, 3440 2160" stroke="#00bbdd" stroke-width="70" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- Cyan energy glow overlay -->
+  <ellipse cx="1920" cy="970" rx="1200" ry="900" fill="url(#energyGlow)"/>
+
+  <!-- Subtle particle/dust cloud effect -->
+  <g opacity="0.15" filter="url(#fog)">
+    <circle cx="500" cy="600" r="200" fill="#00ddff"/>
+    <circle cx="3340" cy="700" r="180" fill="#0099dd"/>
+    <circle cx="1200" cy="1400" r="250" fill="#00bbee"/>
+    <circle cx="2600" cy="1300" r="220" fill="#0088cc"/>
+    <circle cx="1920" cy="2000" r="300" fill="#0099bb"/>
+  </g>
+
+  <!-- Horizontal light sweep -->
+  <rect width="3840" height="2160" fill="url(#horizontalSweep)"/>
+
+  <!-- Soft vignette and edge control -->
+  <rect width="3840" height="2160" fill="url(#vignette)"/>
+
+  <!-- Ultra-subtle top-to-bottom fade overlay for text readability -->
+  <defs>
+    <linearGradient id="readabilityMask" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:0.05" />
+      <stop offset="50%" style="stop-color:#000000;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="3840" height="2160" fill="url(#readabilityMask)"/>
+</svg>
