@@ -1,0 +1,18 @@
+:root {
+  --primary-maroon: #722F37;
+  --primary-maroon-dark: #5A252C;
+  --primary-maroon-light: #8B3A42;
+  --secondary-offwhite: #FAF9F6;
+  --secondary-offwhite-light: #FFFFFF;
+  --secondary-offwhite-dark: #F0EDE8;
+  --neutral-charcoal: #36454F;
+  --accent-gold: #D4AF37;
+  --text-primary: var(--neutral-charcoal);
+  --text-secondary: #808080;
+  --text-white: var(--secondary-offwhite-light);
+  --bg-primary: var(--secondary-offwhite);
+  --bg-secondary: var(--secondary-offwhite-light);
+  --gradient-primary: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-maroon-dark) 100%);
+  --shadow-light: 0 2px 8px rgba(114, 47, 55, 0.1);
+  --shadow-medium: 0 4px 16px rgba(114, 47, 55, 0.15);
+}
