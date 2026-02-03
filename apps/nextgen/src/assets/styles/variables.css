@@ -15,4 +15,7 @@
   --gradient-primary: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-maroon-dark) 100%);
   --shadow-light: 0 2px 8px rgba(114, 47, 55, 0.1);
   --shadow-medium: 0 4px 16px rgba(114, 47, 55, 0.15);
+  --border-light: 1px solid #ececec;
+  --border-medium: 1.5px solid #d4af37;
+  --transition-slow: 0.4s cubic-bezier(0.4,0.2,0.2,1);
 }

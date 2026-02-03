@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -24,9 +24,9 @@ const Footer = () => {
       { label: 'Fast-Track Construction', path: '/services' },
     ],
     contact: [
-      { label: '📍 Chovisawadi, Charholi Budruk, Maharashtra 412105' },
-      { label: '📞 +91 XXXXXXXXXX' },
-      { label: '📧 info@artemisconsultants.in' },
+      { icon: <FaMapMarkerAlt />, text: 'Chovisawadi, Charholi Budruk, Maharashtra 412105' },
+      { icon: <FaPhone />, text: '+91 7447777413' },
+      { icon: <FaEnvelope />, text: 'priyanka.patil@artemisinfratech.com, shubhangi.deore@artemisinfratech.com' },
     ],
   };
 
@@ -120,12 +120,8 @@ const Footer = () => {
             <ul className={styles.linksList}>
               {footerLinks.contact.map((item, index) => (
                 <li key={index} className={styles.contactItem}>
-                  <span className={styles.contactIcon}>
-                    {item.label.charAt(0)}
-                  </span>
-                  <span className={styles.contactText}>
-                    {item.label.slice(2)}
-                  </span>
+                  <span className={styles.contactIcon}>{item.icon}</span>
+                  <span className={styles.contactText}>{item.text}</span>
                 </li>
               ))}
             </ul>

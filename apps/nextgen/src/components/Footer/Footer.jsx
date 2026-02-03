@@ -1,16 +1,11 @@
 import React from 'react';
+import styles from './Footer.module.css';
 
 const Footer = () => {
   return (
-    <footer style={{
-      background: 'var(--neutral-charcoal)',
-      color: 'var(--text-white)',
-      padding: '40px',
-      textAlign: 'center',
-      marginTop: '60px',
-    }}>
+    <footer className={styles.footer}>
       <p>&copy; 2026 Artemis NextGen. All rights reserved.</p>
-      <p style={{ marginTop: '10px', fontSize: '12px', opacity: 0.8 }}>
+      <p className={styles.subtext}>
         Next Generation Solutions Platform
       </p>
     </footer>

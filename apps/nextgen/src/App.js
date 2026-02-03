@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+
+import Header from './components/Header/Header.jsx';
+import Footer from './components/Footer/Footer.jsx';
 import { routeConfig } from './routes';
 import './assets/styles/index.css';
 import './assets/styles/global.css';
@@ -12,13 +13,13 @@ function App() {
     <BrowserRouter>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
-        <main style={{ flex: 1, paddingTop: '80px' }}>
+        <main style={{  paddingTop: '80px' }}>
           <Routes>
             {routeConfig.map(route => (
-              <Route 
-                key={route.path} 
-                path={route.path} 
-                element={<route.component />} 
+              <Route
+                key={route.path}
+                path={route.path}
+                element={<route.component />}
               />
             ))}
           </Routes>

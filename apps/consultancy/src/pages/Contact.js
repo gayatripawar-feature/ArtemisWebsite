@@ -220,7 +220,7 @@ export default function Contact() {
                       </div>
                       <div className={styles.contactText}>
                         <h3 className={styles.contactLabel}>Phone:</h3>
-                        <p className={styles.contactValue}>+91 XXXXXXXXXX</p>
+                        <p className={styles.contactValue}>+91 7447777413</p>
                       </div>
                     </div>
 
@@ -231,12 +231,26 @@ export default function Contact() {
                       <div className={styles.contactText}>
                         <h3 className={styles.contactLabel}>Email:</h3>
                         <p className={styles.contactValue}>
+                        <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=priyanka.patil@artemisinfratech.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.emailLink}
+>
+  priyanka.patil@artemisinfratech.com
+</a>
+
+                        </p>
+                        <p className={styles.contactValue}>
                           <a
-                            href="mailto:info@artemisconsultants.in"
-                            className={styles.emailLink}
-                          >
-                            info@artemisconsultants.in
-                          </a>
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=shubhangi.deore@artemisinfratech.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  title="Email via Gmail"
+    className={styles.emailLink}
+>
+  shubhangi.deore@artemisinfratech.com
+</a>
                         </p>
                       </div>
                     </div>

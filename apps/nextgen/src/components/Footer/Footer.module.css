@@ -1,0 +1,13 @@
+.footer {
+  background: var(--neutral-charcoal);
+  color: var(--text-white);
+  padding: 40px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.subtext {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.8;
+}
