@@ -32,7 +32,7 @@ export default function WhyArtemis() {
 	return (
 		<div className={styles.page}>
 			<PageBanner
-				title="Why Artemis Consultants?"
+				title="Why Artemis Infratech Consultancy?"
 				breadcrumbs={breadcrumbs}
 				bgImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=400&fit=crop&crop=center"
 			/>
@@ -41,7 +41,7 @@ export default function WhyArtemis() {
 
 					<div ref={ref} className={`${styles.whyContent} ${visible ? styles.animateIn : ''}`}>
 						<div className={styles.sectionHeader}>
-							<h2 className={styles.sectionTitle}>Why Artemis Consultants?</h2>
+							<h2 className={styles.sectionTitle}>Why Artemis Infratech Consultancy?</h2>
 							<p className={styles.sectionSubtitle}>
 								We don’t just manage projects — we protect investments.
 							</p>

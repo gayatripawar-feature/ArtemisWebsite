@@ -1,13 +1,4 @@
-/**
- * App Component - Root component for Artemis Consultancy
- * Handles routing and layout wrapping
- * 
- * Architecture:
- * - BrowserRouter: Client-side routing (no basename, assumes app is at domain root)
- * - AppLayout: Wraps routes with Header and Footer
- * - Routes: Mapped from centralized route configuration
- * - Styles: Global CSS imported once here
- */
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppLayout from './layouts/AppLayout';
@@ -22,10 +13,10 @@ function App() {
       <AppLayout>
         <Routes>
           {routeConfig.map(route => (
-            <Route 
-              key={route.path} 
-              path={route.path} 
-              element={<route.component />} 
+            <Route
+              key={route.path}
+              path={route.path}
+              element={<route.component />}
             />
           ))}
         </Routes>

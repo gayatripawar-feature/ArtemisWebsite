@@ -8,13 +8,10 @@ import styles from './Header.module.css';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    setIsLoaded(true);
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -64,7 +61,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isLoaded ? styles.loaded : ''}`}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.headerContainer}>
         {/* Logo Section */}
         <div className={styles.logoSection}>
@@ -75,13 +72,13 @@ const Header = () => {
             <div className={styles.logoIcon}>
               <img
                 src={artemis}
-                alt="Artemis Consultants Logo"
+                alt="Artemis Infratech Consultancy Logo"
                 className={styles.logoImage}
               />
             </div>
             <div className={styles.logoText}>
-              <h1 className={styles.logoTitle}>Artemis Consultants</h1>
-              <p className={styles.logoTagline}>Engineering-Led Project Consulting</p>
+              <h1 className={styles.logoTitle}>Artemis Infratech Consultancy</h1>
+              <p className={styles.logoTagline}>Turning Land into a Timeless Legacy</p>
             </div>
           </div>
         </div>

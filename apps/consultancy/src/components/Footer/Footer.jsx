@@ -56,10 +56,10 @@ const Footer = () => {
 
             <div className={styles.brandText}>
               <h2 className={styles.brandTitle}>
-                <span className={styles.gradientText}>Artemis Consultants</span>
+                <span className={styles.gradientText}>Artemis Infratech Consultancy</span>
               </h2>
               <p className={styles.brandTagline}>
-                Engineering-Led Project Consulting for Real Estate & Infrastructure.
+                Turning Land into a Timeless Legacy
               </p>
             </div>
             <div className={styles.socialLinks}>
@@ -141,7 +141,7 @@ const Footer = () => {
         <div className={styles.footerBottom}>
           <div className={styles.copyright}>
             <p className={styles.copyrightText}>
-              © 2026 <span className={styles.highlight}>Artemis Consultants</span>. All Rights Reserved.
+              © 2026 <span className={styles.highlight}>Artemis Infratech Consultancy</span>. All Rights Reserved.
             </p>
             <p className={styles.tagline}>
               Designed for Developers. Trusted by Investors.

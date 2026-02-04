@@ -22,13 +22,14 @@
 }
 
 .headerContainer {
-  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  min-height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -89,21 +90,14 @@
   letter-spacing: -0.5px;
   transition: var(--transition-normal);
   animation: textShimmer 3s ease-in-out infinite;
+  line-height: 1.2;
+  max-width: 350px;
 }
 
 .logo:hover .logoTitle {
   background: var(--gradient-secondary);
   background-clip: text;
   animation: textShimmer 1s ease-in-out infinite;
-}
-
-.logoTagline {
-  font-size: 12px;
-  color: var(--text-secondary);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-top: 2px;
-  transition: var(--transition-normal);
 }
 
 .logo:hover .logoTagline {
@@ -117,6 +111,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-top: 2px;
+  transition: var(--transition-normal);
 }
 
 /* Desktop Navigation */
@@ -261,11 +256,7 @@
   box-shadow: 0 8px 25px rgba(26, 41, 128, 0.3);
 }
 
-.buttonIcon {
-  animation: float 2s ease-in-out infinite;
-  display: inline-block;
-  margin-right: 8px;
-}
+
 
 /* Mobile Menu Button */
 .menuButton {
@@ -356,15 +347,11 @@
   -webkit-tap-highlight-color: transparent;
   transition: opacity 0.36s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.36s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop.menu-open {
+
+.backdrop.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-}
-.backdrop.menu-close {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .closeButton {

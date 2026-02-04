@@ -1,6 +1,6 @@
 # Artemis Main - Corporate Website
 
-Main corporate website for Artemis Consultants (artemis.com)
+Main corporate website for Artemis Infratech Consultancy (artemis.com)
 
 ## Quick Start
 

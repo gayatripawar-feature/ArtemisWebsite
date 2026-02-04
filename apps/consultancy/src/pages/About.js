@@ -29,7 +29,7 @@ export default function About() {
 					<div ref={whoWeAreRef} className={`${styles.content} ${whoWeAreVisible ? styles.animateIn : ''}`}>
 						<h1 className={styles.sectionTitle}>Who We Are</h1>
 						<p className={styles.description}>
-							<strong>Artemis Consultants</strong> is an engineering-led project consulting firm focused on delivering <em>financial certainty, execution clarity, and regulatory confidence</em> in real estate and infrastructure projects.
+							<strong>Artemis Infratech Consultancy</strong> is an engineering-led project consulting firm focused on delivering <em>financial certainty, execution clarity, and regulatory confidence</em> in real estate and infrastructure projects.
 						</p>
 						<p className={styles.description}>
 							We work as an <em>extended arm of developers and investors</em>, ensuring that every rupee spent and every day invested delivers measurable value.

@@ -53,7 +53,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.copyrightSection}>
-        <p className={styles.copyrightText}>© 2026 Artemis Consultants. All rights reserved.</p>
+        <p className={styles.copyrightText}>© 2026 Artemis Infratech Consultancy. All rights reserved.</p>
         <div className={styles.socialLinks}>
           <a href="#" className={styles.socialLink}>Privacy</a>
           <a href="#" className={styles.socialLink}>Terms</a>
