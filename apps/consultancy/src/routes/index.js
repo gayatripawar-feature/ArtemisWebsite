@@ -8,10 +8,10 @@
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Services from '../pages/Services';
-import Approach from '../pages/Approach';
 import Projects from '../pages/Projects';
 import Contact from '../pages/Contact';
 import WhyArtemis from '../pages/WhyArtemis';
+import { OurTeam } from '../pages/OurTeam';
 
 /**
  * Route configuration array
@@ -33,11 +33,7 @@ export const routeConfig = [
     component: Services,
     label: 'Services',
   },
-  {
-    path: '/approach',
-    component: Approach,
-    label: 'Our Approach',
-  },
+
   {
     path: '/projects',
     component: Projects,
@@ -47,6 +43,11 @@ export const routeConfig = [
     path: '/why-artemis',
     component: WhyArtemis,
     label: 'Why Artemis',
+  },
+   {
+    path: '/our-team',
+    component: OurTeam,
+    label: 'Our Team',
   },
   {
     path: '/contact',

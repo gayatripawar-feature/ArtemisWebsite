@@ -1,214 +1,221 @@
-import React, { useEffect } from 'react';
-import styles from './Home.module.css';
-import Button from '../components/Button/Button';
-import CinematicCarousel from '../components/CinematicCarousel';
-import StatsCounter from '../components/StatsCounter';
-import useScrollAnimation from '../hooks/useScrollAnimation';
-import { useNavigate } from 'react-router-dom';
+import styles from "./Home.module.css";
+import CinematicCarousel from "../components/CinematicCarousel";
+import StatsCounter from "../components/StatsCounter";
+import { useNavigate } from "react-router-dom";
+import SectionDivider from "../components/SectionDivider/SectionDivider";
+import Vision1 from "../assets/images/OurVision/Vision1.png";
+import Vision2 from "../assets/images/OurVision/Vision2.png";
+import OurMission from "../components/HomeSections";
+import { KeyOutcomes, WhoWeAre } from "../components/HomeSections";
+import WhatWeDo1 from "../assets/images/WhatWeDo/WhatWeDo1.jpg";
+import WhatWeDo2 from "../assets/images/WhatWeDo/WhatWeDo2.jpg";
 
-const services = [
-	{ title: 'Cost Optimization & Value Engineering', desc: 'Strategic cost management and value engineering solutions', icon: '💰' },
-	{ title: 'End-to-End Project Management (PMC)', desc: 'Complete project lifecycle management', icon: '🎯' },
-	{ title: 'Real-Time Digital Project Control', desc: 'Advanced digital monitoring and control systems', icon: '📊' },
-	{ title: 'RERA & Compliance Management', desc: 'Regulatory compliance and documentation', icon: '📋' },
-	{ title: 'Design-to-Execution Alignment', desc: 'Seamless design implementation', icon: '🔧' },
-	{ title: 'Fast-Track Construction', desc: 'Accelerated project delivery methods', icon: '⚡' },
+
+
+
+import React, { useEffect, useRef, useState } from "react";
+const servicesData = [
+  {
+    id: 1,
+    image: WhatWeDo1,
+    icon: "🏗️",
+    title: "Land Development",
+    description:
+      "Transform raw land into high-value, compliant developments with our comprehensive land conversion expertise and strategic planning.",
+    features: ["Plot Development", "Infrastructure", "Compliance"],
+    link: "/services/land-development",
+  },
+  {
+    id: 2,
+    image: WhatWeDo2,
+    icon: "🏢",
+    title: "Real Estate Consulting",
+    description:
+      "Expert guidance on residential and commercial projects, ensuring optimal returns through quality construction and risk management.",
+    features: ["Project Management", "Quality Control", "Risk Analysis"],
+    link: "/services/real-estate",
+  },
 ];
 
 
 export default function Home() {
-	const [expertiseRef, expertiseVisible] = useScrollAnimation(0.3);
-	const [servicesRef, servicesVisible] = useScrollAnimation(0.3);
-	const [whyRef, whyVisible] = useScrollAnimation(0.3);
-	const navigate = useNavigate();
 
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
-	return (
-		<div className={styles.page}>
-			{/* Hero Section */}
-			<section className={styles.hero}>
-				<CinematicCarousel />
-			</section>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-			{/* Key Outcomes Section */}
-			<section className={styles.keyOutcomesSection}>
-				<div className={styles.keyOutcomesContainer}>
-					<div className={styles.keyOutcomesContent}>
-						<div className={styles.keyOutcomesHeader}>
-							<h2 className={styles.keyOutcomesTitle}>Key Outcomes</h2>
-							<p className={styles.keyOutcomesSubtitle}>
-								The results you can expect when partnering with Artemis Consultancy.
-							</p>
-						</div>
-						<div className={styles.expertiseGrid}>
-							<div className={styles.expertiseCard}>
-								<div className={styles.cardImage}>
-									<img src={require("../assets/images/KeyOutcomes/Key_Outcome1.jpg")} alt="Key Outcome 1" />
-								</div>
-								<div className={styles.cardContent}>
-									<h3>Up to 18% Construction Cost Savings</h3>
-								</div>
-							</div>
-							<div className={styles.expertiseCard}>
-								<div className={styles.cardImage}>
-									<img src={require("../assets/images/KeyOutcomes/Key_Outcome3.jpg")} alt="Key Outcome 3" />
-								</div>
-								<div className={styles.cardContent}>
-									<h3>Before-Time Project Delivery</h3>
-								</div>
-							</div>
-							<div className={styles.expertiseCard}>
-								<div className={styles.cardImage}>
-									<img src={require("../assets/images/KeyOutcomes/Key_Outcome2.jpg")} alt="Key Outcome 2" />
-								</div>
-								<div className={styles.cardContent}>
-									<h3>Single-Point Accountability</h3>
-								</div>
-							</div>
-								<div className={styles.expertiseCard}>
-								<div className={styles.cardImage}>
-									<img src={require("../assets/images/KeyOutcomes/Key_Outcome2.jpg")} alt="Key Outcome 2" />
-								</div>
-								<div className={styles.cardContent}>
-									<h3>Real-Time Digital Project Visibility</h3>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
 
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
-			{/* Stats Counter Section */}
-			<StatsCounter />
+    return () => observer.disconnect();
+  }, []);
 
-			{/* Expertise Section */}
-			<section className={styles.expertise}>
-				<div className={styles.container}>
-					<div ref={expertiseRef} className={`${styles.expertiseContent} ${expertiseVisible ? styles.animateIn : ''}`}>
-						<div className={styles.sectionHeader}>
-							<h2 className={styles.sectionTitle}>Our Core Expertise</h2>
-							<p className={styles.sectionSubtitle}>
-								We specialize in engineering-driven project consulting that protects developer margins, ensures regulatory compliance, and delivers predictable outcomes.
-							</p>
-						</div>
-						<div className={styles.expertiseGrid}>
-							<div className={styles.expertiseCard}>
-								<div className={styles.cardImage}>
-									<img src="https://www.gordian.com/uploads/2019/05/ValureEngineeringGraph.png.webp" alt="Value engineering" />
-								</div>
-								<div className={styles.cardContent}>
-									<h3>Value Engineering</h3>
-									<p>Optimizing project costs without compromising quality or functionality</p>
-								</div>
-							</div>
-							<div className={styles.expertiseCard}>
-								<div className={styles.cardImage}>
-									<img src="https://cdn.prod.website-files.com/607f739c92f9cf647516b37b/66f9f3418d8c1a6d2dd2b10d_66c681c76b14f4545e1e0917_66c67f19673312ac98ddb662_The%252520Ultimate%252520Construction%252520Dashboard%252520for%252520Capital%252520Projects%2525201.webp" alt="Dashboard" />
-								</div>
-								<div className={styles.cardContent}>
-									<h3>Digital Control</h3>
-									<p>Real-time monitoring and control through advanced digital platforms</p>
-								</div>
-							</div>
-							<div className={styles.expertiseCard}>
-								<div className={styles.cardImage}>
-									<img src="https://lydonsolutions.com/wp-content/uploads/2015/12/Lydon-Solutions-Construction-Project-Management-Dashboard-Featured.jpg" alt="Project dashboard" />
-								</div>
-								<div className={styles.cardContent}>
-									<h3>Project Management</h3>
-									<p>End-to-end project management with single-point accountability</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+  return (
+    <>
+    <div className={styles.page}>
+      <CinematicCarousel />
+      <KeyOutcomes />
+      <SectionDivider />
+      <StatsCounter />
+      <SectionDivider />
 
 
 
-			{/* Services Section */}
-			<section id="services" className={styles.services}>
-				<div className={styles.servicesBackground}>
-					<div className={styles.servicesGradient}></div>
-					<div className={styles.servicesPattern}></div>
-				</div>
-				<div className={styles.container}>
-					<div ref={servicesRef} className={`${styles.servicesContent} ${servicesVisible ? styles.animateIn : ''}`}>
-						<div className={styles.sectionHeader}>
-							<h2 className={styles.sectionTitle}>Our Services</h2>
-							<p className={styles.sectionSubtitle}>
-								From concept to completion, we provide end-to-end solutions for construction projects
-							</p>
-						</div>
+      {/* What We Do Section */}
+       <section className={styles.whatWeDoSection}>
+      <div className={styles.container}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionLabel}>Our Expertise</span>
+          <h2 className={styles.sectionTitle}>
+            <span>What We Do</span>
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            Artemis Infratech Consultancy partners with real estate stakeholders
+            to convert land into high-value, compliant, and durable developments
+            by controlling time, cost, quality, and risk—from concept to
+            handover.
+          </p>
+        </div>
 
-						<div className={styles.servicesGrid}>
-							{services.map((service, index) => (
-								<div key={service.title} className={`${styles.serviceCard} ${servicesVisible ? styles.animateIn : ''}`} style={{ animationDelay: `${index * 0.1}s` }}>
-									<div className={styles.serviceIcon}>
-										<span>{service.icon}</span>
-									</div>
-									<div className={styles.serviceContent}>
-										<h3>{service.title}</h3>
-										<p>{service.desc}</p>
-									</div>
-									<div className={styles.serviceGlow}></div>
-								</div>
-							))}
-						</div>
+        <div className={styles.cardsGrid}>
+          {servicesData.map((service) => (
+            <div className={styles.card} key={service.id}>
+              <div className={styles.cardImageWrapper}>
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardOverlay}></div>
+                <div className={styles.cardIcon}>{service.icon}</div>
+              </div>
 
-						<div className={styles.servicesCta}>
-							<Button variant="primary" className={styles.servicesButton} onClick={() => navigate('/services')}>
-								View All Services
-							</Button>
-						</div>
-					</div>
-				</div>
-			</section>
+              <div className={styles.cardContent}>
+                <span className={styles.cardNumber}>0{service.id}</span>
+                <h3 className={styles.cardTitle}>{service.title}</h3>
+                <p className={styles.cardDescription}>{service.description}</p>
 
-			{/* Why Choose Us Section */}
-			<section className={styles.why}>
-				<div className={styles.container}>
-					<div ref={whyRef} className={`${styles.whyContent} ${whyVisible ? styles.animateIn : ''}`}>
-						<div className={styles.sectionHeader}>
-							<h2 className={styles.sectionTitle}>Why Clients Choose Artemis</h2>
-							<p className={styles.sectionSubtitle}>
-								Trusted by developers and contractors for delivering exceptional results
-							</p>
-						</div>
+                <div className={styles.cardFeatures}>
+                  {service.features.map((feature, index) => (
+                    <span className={styles.featureTag} key={index}>
+                      <span className={styles.featureIcon}>✓</span>
+                      {feature}
+                    </span>
+                  ))}
+                </div>
 
-						<div className={styles.whyGrid}>
-							<div className={styles.whyCard}>
-								<div className={styles.whyIcon}>🎯</div>
-								<h3>Single-point Responsibility</h3>
-								<p>One dedicated team handling all aspects of your project</p>
-							</div>
+              </div>
+            </div>
+          ))}
+        </div>
 
-							<div className={styles.whyCard}>
-								<div className={styles.whyIcon}>🛡️</div>
-								<h3>Zero-surprise Governance</h3>
-								<p>Transparent processes with no hidden costs or delays</p>
-							</div>
+        <div className={styles.ctaWrapper}>
+          <button
+            onClick={() => navigate('/services')}
+            className={styles.ctaButton}
+          >
+            Know More
+            <span className={styles.ctaButtonIcon}>→</span>
+          </button>
+        </div>
+      </div>
+    </section>
 
-							<div className={styles.whyCard}>
-								<div className={styles.whyIcon}>📋</div>
-								<h3>Compliance & Audit Ready</h3>
-								<p>Full regulatory compliance with audit-ready documentation</p>
-							</div>
 
-							<div className={styles.whyCard}>
-								<div className={styles.whyIcon}>⚙️</div>
-								<h3>Engineering Excellence</h3>
-								<p>Designed by engineers, delivered for developers</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-	);
+
+      <SectionDivider />
+      <WhoWeAre />
+      <SectionDivider />
+
+      {/* Vision Section */}
+      <section className={styles["vision-section"]} id="vision">
+        <div className={styles["vision-bg-pattern"]}></div>
+        <div className={styles["vision-floating-shapes"]}>
+          <span className={`${styles.shape} ${styles["shape-1"]}`}></span>
+          <span className={`${styles.shape} ${styles["shape-2"]}`}></span>
+          <span className={`${styles.shape} ${styles["shape-3"]}`}></span>
+        </div>
+
+        <div className={styles["vision-container"]}>
+          <div className={styles["vision-images"]}>
+            <div
+              className={`${styles["vision-image-wrapper"]} ${styles.primary}`}
+            >
+              <img
+                src={Vision1}
+                alt="Cityscape with connected network overlay"
+              />
+              <div className={styles["image-overlay"]}></div>
+              <div className={styles["image-border-glow"]}></div>
+            </div>
+            <div
+              className={`${styles["vision-image-wrapper"]} ${styles.secondary}`}
+            >
+              <img src={Vision2} alt="Engineer holding safety helmet" />
+              <div className={styles["image-overlay"]}></div>
+              <div className={styles["image-border-glow"]}></div>
+            </div>
+            <div className={styles["vision-decorative-box"]}></div>
+            <div className={styles["vision-decorative-dots"]}>
+              {Array.from({ length: 16 }).map((_, i) => (
+                <span key={i}></span>
+              ))}
+            </div>
+            <div className={styles["vision-connecting-line"]}></div>
+          </div>
+
+          <div className={styles["vision-content"]}>
+            <span className={styles["vision-label"]}>
+              <span className={styles["label-icon"]}>◆</span>
+              Our Purpose
+            </span>
+            <h2 className={styles["vision-title"]}>
+              Our <span className={styles["title-highlight"]}>Vision</span>
+            </h2>
+            <div className={styles["vision-divider"]}>
+              <span
+                className={`${styles["divider-line"]} ${styles.left}`}
+              ></span>
+              <span className={styles["divider-diamond"]}></span>
+              <span
+                className={`${styles["divider-line"]} ${styles.right}`}
+              ></span>
+            </div>
+            <div className={styles["vision-statement-wrapper"]}>
+              <div className={styles["quote-mark"]}>"</div>
+              <p className={styles["vision-statement"]}>
+                To consistently deliver construction projects before committed
+                timelines through <strong>disciplined engineering</strong> and{" "}
+                <strong>intelligent planning</strong>.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      <OurMission />
+
+      <SectionDivider />
+    </div>
+    </>
+  );
 }
-

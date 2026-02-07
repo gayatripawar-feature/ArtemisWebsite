@@ -35,6 +35,8 @@
   --text-muted: var(--neutral-lightgray);
   --text-white: var(--secondary-offwhite-light);
   --text-on-primary: var(--secondary-offwhite);
+  --text-light: #A0A0A0;
+
 
   /* Background Colors */
   --bg-primary: var(--secondary-offwhite);
@@ -52,13 +54,23 @@
   --shadow-light: 0 2px 8px rgba(114, 47, 55, 0.1);
   --shadow-medium: 0 4px 16px rgba(114, 47, 55, 0.15);
   --shadow-heavy: 0 8px 32px rgba(114, 47, 55, 0.2);
+  --shadow-soft: 0 2px 8px rgba(114, 47, 55, 0.1);
+
 
   /* Borders */
   --border-light: 1px solid var(--neutral-lightgray);
   --border-medium: 1px solid var(--neutral-mutedgray);
 
   /* Transitions */
-  --transition-fast: all 0.2s ease;
-  --transition-normal: all 0.3s ease;
-  --transition-slow: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Header Specific */
+  --header-height: 80px;
+  --header-bg: rgba(250, 249, 246, 0.92);
+  --header-bg-scrolled: rgba(250, 249, 246, 0.98);
+
+
 }

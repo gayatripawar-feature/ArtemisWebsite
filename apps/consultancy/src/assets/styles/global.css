@@ -15,7 +15,7 @@
   --accent-color: var(--accent-gold);
   --text-dark: var(--text-primary);
   --text-light: var(--text-secondary);
-  --text-white: var(--text-white);
+  --text-white: var(--secondary-offwhite-light);
   --bg-light: var(--bg-primary);
   --shadow: var(--shadow-light);
   --shadow-hover: var(--shadow-medium);

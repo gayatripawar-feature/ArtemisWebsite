@@ -1,7 +1,10 @@
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import Button from '../Button/Button';
+import { useNavigate } from 'react-router-dom';
 import artemis from '../../assets/images/artemis.png';
 import styles from './Header.module.css';
 
@@ -9,7 +12,6 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +22,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open and restore on close
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -49,9 +51,10 @@ const Header = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Services' },
-    { path: '/approach', label: 'Our Approach' },
-    { path: '/projects', label: 'Projects / Expertise' },
+    { path: '/projects', label: 'Projects' },
     { path: '/why-artemis', label: 'Why Artemis' },
+    { path: '/our-team', label: 'Our Team' },
+
     { path: '/contact', label: 'Contact Us' },
   ];
 
@@ -61,14 +64,11 @@ const Header = () => {
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
-      <div className={styles.headerContainer}>
-        {/* Logo Section */}
-        <div className={styles.logoSection}>
-          <div
-            className={styles.logo}
-            onClick={() => handleNavClick('/')}
-          >
+    <>
+      <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+        <div className={styles.headerContainer}>
+          {/* Logo Section */}
+          <div className={styles.logoSection} onClick={() => handleNavClick('/')}>
             <div className={styles.logoIcon}>
               <img
                 src={artemis}
@@ -77,109 +77,104 @@ const Header = () => {
               />
             </div>
             <div className={styles.logoText}>
-              <h1 className={styles.logoTitle}>Artemis Infratech Consultancy</h1>
-              <p className={styles.logoTagline}>Turning Land into a Timeless Legacy</p>
+              <span className={styles.logoTitle}>Artemis Infratech Consultancy</span>
+              <span className={styles.logoTagline}>Turning Land into a Timeless Legacy</span>
             </div>
           </div>
-        </div>
 
-        {/* Desktop Navigation */}
-        <nav className={styles.navDesktop}>
-          <ul className={styles.navList}>
-            {menuItems.map((item) => (
-              <li key={item.path} className={styles.navItem}>
-                <Link
-                  to={item.path}
-                  className={`${styles.navLink} ${location.pathname === item.path ? styles.active : ''}`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <span className={styles.linkText}>{item.label}</span>
-                  <span className={styles.linkUnderline}></span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* CTA Button */}
-        <div className={styles.ctaSection}>
-          <Button
-            variant="primary"
-            onClick={() => handleNavClick('/contact')}
-            className={styles.ctaButton}
-          >
-            Request Consultation
-          </Button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        aria-expanded={isMenuOpen}
-        aria-controls="mobile-navigation"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    {/* Mobile overlay/backdrop rendered via portal (so it sits above header transform) */}
-    {typeof document !== 'undefined' && createPortal(
-      <>
-        <div
-          className={`${styles.backdrop} ${isMenuOpen ? styles.open : ''}`}
-          onClick={() => setIsMenuOpen(false)}
-          aria-hidden={!isMenuOpen}
-        />
-
-        <div
-          id="mobile-navigation"
-          className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}
-          role="dialog"
-          aria-modal={isMenuOpen}
-        >
-          <div className={styles.mobileMenuContent}>
-            <button className={styles.closeButton} onClick={() => setIsMenuOpen(false)} aria-label="Close menu">✕</button>
-            <ul className={styles.mobileNavList}>
-              {menuItems.map((item) => (
-                <li key={item.path} className={styles.mobileNavItem}>
-                  <Link
-                    to={item.path}
-                    className={`${styles.mobileNavLink} ${location.pathname === item.path ? styles.active : ''}`}
-                    onClick={() => setIsMenuOpen(false)}
+          {/* Desktop Navigation */}
+          <nav className={styles.navDesktop}>
+            <ul className={styles.navList}>
+              {menuItems.map((item, index) => (
+                <li key={item.path} className={styles.navItem}>
+                  <button
+                    className={styles.navLink}
+                    onClick={() => handleNavClick(item.path)}
+                    style={{ '--delay': `${index * 0.05}s` }}
                   >
                     {item.label}
-                  </Link>
+                    <span className={styles.navUnderline}></span>
+                  </button>
                 </li>
               ))}
             </ul>
+          </nav>
+
+          {/* CTA Button */}
+          <div className={styles.ctaSection}>
+            <button className={styles.ctaButton} onClick={() => handleNavClick('/contact')}>
+              <span>Request Consultation</span>
+              <svg className={styles.ctaArrow} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
           </div>
 
-          {/* CTA placed outside content so it can be anchored to bottom of overlay */}
-          <div className={styles.mobileCta}>
-            <Button
-              variant="primary"
-              onClick={() => {
-                handleNavClick('/contact');
-                setIsMenuOpen(false);
-              }}
-              className={styles.mobileCtaButton}
-            >
-              🔹 Request Consultation
-            </Button>
-          </div>
+          {/* Mobile Menu Toggle */}
+          <button
+            className={`${styles.menuToggle} ${isMenuOpen ? styles.menuOpen : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span className={styles.menuBar}></span>
+            <span className={styles.menuBar}></span>
+            <span className={styles.menuBar}></span>
+          </button>
         </div>
-      </>,
-      document.body
-    )}
+      </header>
 
-      {/* Header Glow Effect */}
-      <div className={styles.headerGlow}></div>
-    </header>
+      {/* Mobile Menu Portal */}
+      {createPortal(
+        <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
+          <div className={styles.mobileMenuOverlay} onClick={() => setIsMenuOpen(false)}></div>
+          <div className={styles.mobileMenuContent}>
+            <nav className={styles.mobileNav}>
+              <ul className={styles.mobileNavList}>
+                {menuItems.map((item, index) => (
+                  <li
+                    key={item.path}
+                    className={styles.mobileNavItem}
+                    style={{ '--index': index }}
+                  >
+                    <button
+                      className={styles.mobileNavLink}
+                      onClick={() => handleNavClick(item.path)}
+                    >
+                      <span className={styles.mobileNavNumber}>0{index + 1}</span>
+                      <span className={styles.mobileNavText}>{item.label}</span>
+                      <svg className={styles.mobileNavArrow} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className={styles.mobileMenuFooter}>
+              <button className={styles.mobileCtaButton} onClick={() => handleNavClick('/contact')}>
+                Request Consultation
+              </button>
+              <div className={styles.mobileContact}>
+                <a href="mailto:priyanka.patil@artemisinfratech.com">priyanka.patil@artemisinfratech.com</a>
+                <a href="mailto:shubhangi.deore@artemisinfratech.com">shubhangi.deore@artemisinfratech.com</a>
+
+                <a href="tel:+91 7447777413">+91 7447777413</a>
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
   );
 };
 
 export default Header;
+
+
+
+
+
+
+
