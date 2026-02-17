@@ -1,75 +1,132 @@
-import React, { useEffect } from 'react';
+
+
+
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './WhyArtemis.module.css';
-import useScrollAnimation from '../hooks/useScrollAnimation';
 import PageBanner from '../components/PageBanner';
+import WhyArtemisBanner from "../assets/images/WhyArtemis/WhyArtemisBanner.jpg";
 
-const images = [
-	'https://miro.medium.com/1%2AuANnhTXT8zGJWnZp32vRtQ.jpeg',
-	'https://cdn.prod.website-files.com/607f739c92f9cf647516b37b/68b67dab8544d5ae3ad4ee9e_project-controls-dashboard.png',
-	'https://cdn-ikpnogb.nitrocdn.com/cdPGWyOaMJgCoqiEOEpUSTgMoqloHDjJ/assets/images/optimized/rev-38d1899/www.tejjy.com/wp-content/uploads/2024/05/Types-of-Risk-in-Construction-Projects.png',
+
+const features = [
+  {
+    icon: '🧠',
+    title: 'Engineering-Led Decision Making',
+    desc: 'Every project is governed by technical evaluation, constructability analysis, and value engineering, not guesswork. This ensures right decisions at the right time, reducing rework and hidden costs.',
+    highlight: 'Technical Excellence',
+  },
+  {
+    icon: '💰',
+    title: 'Proven Cost Optimization (Up to 18%)',
+    desc: 'Through detailed BOQ analysis, specification optimization, and smart construction methodologies, we consistently deliver up to 18% cost savings—without compromising quality, safety, or long-term performance.',
+    highlight: 'Guaranteed Savings',
+  },
+  {
+    icon: '⏱️',
+    title: 'Before-Time Delivery Focus',
+    desc: 'Our planning systems, milestone controls, and fast-track execution strategies are designed to recover lost time and compress schedules, enabling before-committed delivery, not just on-time completion.',
+    highlight: 'Speed & Efficiency',
+  },
+  {
+    icon: '🎯',
+    title: 'Single-Point Accountability',
+    desc: 'From planning to handover, Artemis acts as a single accountable partner, eliminating coordination gaps between consultants, contractors, and stakeholders—so decisions are faster and outcomes are predictable.',
+    highlight: 'Full Ownership',
+  },
+  {
+    icon: '📊',
+    title: 'Digital Transparency & Real-Time Control',
+    desc: 'Clients get live project visibility through dashboards, progress reports, and photographic documentation—ensuring no surprises, no blind spots, and full confidence throughout execution.',
+    highlight: 'Complete Visibility',
+  },
 ];
 
-const points = [
-	{ icon: '🛠️', title: 'Engineering-first decision making', desc: 'Technical rigor drives practical, cost-effective choices.' },
-	{ icon: '🎯', title: 'Single accountable authority', desc: 'One accountable team for seamless delivery and clarity.' },
-	{ icon: '🔍', title: 'Digital transparency', desc: 'Real-time visibility into cost, schedule and quality.' },
-	{ icon: '📋', title: 'Strong compliance framework', desc: 'Audit-ready processes that de-risk regulatory exposure.' },
-	{ icon: '⚡', title: 'Faster ROI realization', desc: 'Accelerated delivery and value optimisation for owners.' },
-];
+function useScrollAnimation(threshold = 0.2) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return [ref, visible];
+}
 
 export default function WhyArtemis() {
-	const [ref, visible] = useScrollAnimation(0.28);
+  const [featuresRef, featuresVisible] = useScrollAnimation(0.1);
 
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-	const breadcrumbs = [
-		{ label: 'Home' },
-		{ label: 'Why Artemis' }
-	];
+  const breadcrumbs = [
+    { label: 'Home' },
+    { label: 'Why Artemis' },
+  ];
 
-	return (
-		<div className={styles.page}>
-			<PageBanner
-				title="Why Artemis Infratech Consultancy?"
-				breadcrumbs={breadcrumbs}
-				bgImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=400&fit=crop&crop=center"
-			/>
-			<section className={styles.why}>
-				<div className={styles.container}>
+  return (
+    <div className={styles.page}>
+      <PageBanner
+        title="Why Choose Artemis Consultancy?"
+        breadcrumbs={breadcrumbs}
+        bgImage={WhyArtemisBanner}
+      />
 
-					<div ref={ref} className={`${styles.whyContent} ${visible ? styles.animateIn : ''}`}>
-						<div className={styles.sectionHeader}>
-							<h2 className={styles.sectionTitle}>Why Artemis Infratech Consultancy?</h2>
-							<p className={styles.sectionSubtitle}>
-								We don’t just manage projects — we protect investments.
-							</p>
-						</div>
+      {/* Intro Section */}
+      <section className={styles.introSection}>
+        <div className={styles.container}>
+          <div className={styles.introContent}>
+            <span className={styles.introLabel}>Our Promise</span>
+            <h2 className={styles.introTitle}>
+              Engineering-Led Consulting.<br />
+              <span className={styles.highlight}>Execution Certainty.</span><br />
+              Measurable Results.
+            </h2>
+            <p className={styles.introText}>
+              At Artemis Infratech Consultancy, we don't rely on assumptions or generic project management.
+              Every decision is driven by engineering logic, data-backed planning, and on-ground execution
+              control—ensuring your project performs exactly as committed.
+            </p>
+            <div className={styles.introDecor}></div>
+          </div>
+        </div>
+      </section>
 
-					{/* Images row  */}
-					<div className={styles.imagesRow}>
-						{images.map((src, idx) => (
-							<div key={idx} className={styles.imageBox}>
-								<img src={src} alt={`why-artemis-${idx + 1}`} className={styles.imageElement} />
-							</div>
-						))}
-					</div>
+      {/* Features Section */}
+      <section className={styles.featuresSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>Our Edge</span>
+            <h2 className={styles.sectionTitle}>What Truly Sets Us Apart</h2>
+            <div className={styles.titleUnderline}></div>
+          </div>
 
-					<div className={styles.whyGrid}>
-						{points.map((p) => (
-							<div key={p.title} className={styles.whyCard}>
-								<div className={styles.whyIcon}>{p.icon}</div>
-								<h3 className={styles.cardTitle}>{p.title}</h3>
-								<p className={styles.cardDesc}>{p.desc}</p>
-							</div>
-						))}
-					</div>
-
-				</div>
-			</div>
-		</section>
-		</div>
-	);
+          <div ref={featuresRef} className={`${styles.featuresGrid} ${featuresVisible ? styles.animateIn : ''}`}>
+            {features.map((feature, index) => (
+              <div
+                key={feature.title}
+                className={styles.featureCard}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className={styles.cardBadge}>{feature.highlight}</div>
+                <div className={styles.featureIconWrapper}>
+                  <div className={styles.featureIcon}>{feature.icon}</div>
+                </div>
+                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                <p className={styles.featureDesc}>{feature.desc}</p>
+                <div className={styles.cardGlow}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={styles.floatingShape1}></div>
+        <div className={styles.floatingShape2}></div>
+      </section>
+    </div>
+  );
 }
 

@@ -1,0 +1,17 @@
+.aboutPage {
+  font-family: var(--font-family);
+  background: var(--bg-primary);
+}
+
+.contentSection {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 60px var(--container-padding);
+}
+
+.placeholder {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  text-align: center;
+}

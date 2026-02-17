@@ -72,5 +72,16 @@
   --header-bg: rgba(250, 249, 246, 0.92);
   --header-bg-scrolled: rgba(250, 249, 246, 0.98);
 
+  /* Footer specific enhanced colors */
+  --footer-bg: #1a2332;
+  --footer-bg-dark: #141c28;
+  --footer-accent: var(--accent-gold);
+  --footer-accent-glow: rgba(212, 175, 55, 0.3);
+  --footer-text: rgba(255, 255, 255, 0.85);
+  --footer-text-muted: rgba(255, 255, 255, 0.55);
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --footer-card-bg: rgba(255, 255, 255, 0.04);
+  --footer-card-hover: rgba(255, 255, 255, 0.08);
+
 
 }

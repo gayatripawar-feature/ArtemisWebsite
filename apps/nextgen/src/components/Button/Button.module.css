@@ -1,0 +1,92 @@
+.button {
+  position: relative;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition);
+  transform: translateY(0);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  outline: none;
+  z-index: 1;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.button:active {
+  transform: translateY(-1px);
+}
+
+.buttonContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.buttonGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.button:hover .buttonGlow {
+  opacity: 0.1;
+}
+
+/* Primary Button */
+.primary {
+  background: var(--gradient-primary);
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-light);
+}
+
+.primary:hover {
+  background: var(--gradient-secondary);
+}
+
+/* Secondary Button */
+.secondary {
+  background: transparent;
+  color: var(--primary-maroon);
+  border: 2px solid var(--primary-maroon);
+}
+
+.secondary:hover {
+  background: var(--primary-maroon);
+  color: var(--text-on-primary);
+}
+
+/* Outline Button */
+.outline {
+  background: transparent;
+  color: var(--text-white);
+  border: 2px solid var(--text-white);
+}
+
+.outline:hover {
+  background: var(--text-white);
+  color: var(--primary-color);
+}
+
+/* Disabled State */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}

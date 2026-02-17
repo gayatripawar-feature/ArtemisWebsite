@@ -1,0 +1,508 @@
+/* SERVICES SECTION  */
+
+.services {
+  position: relative;
+  padding: 60px 40px;
+  background: var(--bg-primary);
+  overflow: hidden;
+  font-family: var(--font-family);
+}
+
+/* ===== RICH AMBIENT BACKGROUND ===== */
+.servicesBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+
+
+/* ===== CONTENT WRAPPER ===== */
+.servicesContent {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1),
+              transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.servicesContent.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== SECTION HEADER ===== */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionLabel {
+
+   display: inline-block;
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+}
+
+
+
+.sectionTitle {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-maroon);
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+
+
+.sectionTitleUnderline {
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--accent-gold) 50%, var(--primary-maroon) 100%);
+  background-size: 200% 100%;
+  border-radius: 2px;
+  margin: 16px auto 0;
+  animation: shimmerUnderline 3s linear infinite;
+}
+
+@keyframes shimmerUnderline {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+
+
+/* ===== 3D GRID ===== */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  perspective: 1200px;
+}
+
+/* ===== 3D SERVICE CARD ===== */
+.cardWrapper {
+  perspective: 800px;
+  opacity: 0;
+  transform: translateY(50px) rotateX(10deg);
+  animation: cardReveal 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  display: flex;
+}
+
+.cardWrapper:nth-child(1) { animation-delay: 0.1s; }
+.cardWrapper:nth-child(2) { animation-delay: 0.2s; }
+.cardWrapper:nth-child(3) { animation-delay: 0.3s; }
+.cardWrapper:nth-child(4) { animation-delay: 0.4s; }
+.cardWrapper:nth-child(5) { animation-delay: 0.5s; }
+.cardWrapper:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+.serviceCard {
+  position: relative;
+  padding: 44px 34px 38px;
+  border-radius: 24px;
+  background: linear-gradient(160deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(250, 249, 246, 0.85) 50%,
+    rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              border-color 0.4s ease;
+  will-change: transform;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.serviceCard:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow:
+    0 20px 60px rgba(114, 47, 55, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Animated gradient border on hover */
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1.5px;
+  background: linear-gradient(
+    var(--border-angle, 135deg),
+    transparent 20%,
+    rgba(212, 175, 55, 0.5) 40%,
+    rgba(114, 47, 55, 0.4) 60%,
+    rgba(212, 175, 55, 0.3) 80%,
+    transparent 100%);
+  /* -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); */
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+  0% { --border-angle: 0deg; }
+  100% { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 135deg;
+  inherits: false;
+}
+
+.serviceCard:hover::before {
+  opacity: 1;
+}
+
+/* Top glow line */
+.serviceCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30%;
+  right: 30%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease, left 0.5s ease, right 0.5s ease;
+  z-index: 3;
+}
+
+.serviceCard:hover::after {
+  opacity: 1;
+  left: 5%;
+  right: 5%;
+}
+
+/* Shine effect */
+.cardShine {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.cardShine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(212, 175, 55, 0.18) 0%,
+      rgba(114, 47, 55, 0.08) 25%,
+      transparent 55%),
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(255, 255, 255, 0.3) 0%,
+      transparent 30%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.serviceCard:hover .cardShine::after {
+  opacity: 1;
+}
+
+/* Floating shadow beneath */
+.cardShadow {
+  position: absolute;
+  bottom: -12px;
+  left: 8%;
+  right: 8%;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(114, 47, 55, 0.15) 0%, transparent 70%);
+  filter: blur(16px);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: -1;
+}
+
+.serviceCard:hover .cardShadow {
+  opacity: 1;
+  transform: translateY(8px) scaleX(0.9);
+}
+
+/* ===== CARD NUMBER ===== */
+.cardNumber {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(114, 47, 55, 0.06);
+  line-height: 1;
+  z-index: 1;
+  transition: -webkit-text-stroke 0.4s ease;
+  pointer-events: none;
+  transform: translateZ(15px);
+}
+
+.serviceCard:hover .cardNumber {
+  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.15);
+}
+
+/* ===== ICON ===== */
+.serviceIcon {
+  width: 76px;
+  height: 76px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  background: linear-gradient(145deg, rgba(114, 47, 55, 0.08), rgba(212, 175, 55, 0.08));
+  border: 1.5px solid rgba(114, 47, 55, 0.1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateZ(30px);
+  position: relative;
+  z-index: 2;
+  box-shadow:
+    0 4px 16px rgba(114, 47, 55, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Animated ring around icon */
+.iconRing {
+  position: absolute;
+  inset: -6px;
+  border-radius: 24px;
+  border: 1.5px dashed rgba(212, 175, 55, 0.15);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: spinRing 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spinRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.serviceCard:hover .iconRing {
+  opacity: 1;
+}
+
+.serviceCard:hover .serviceIcon {
+  background: linear-gradient(145deg, rgba(114, 47, 55, 0.15), rgba(212, 175, 55, 0.18));
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 0 35px rgba(212, 175, 55, 0.2),
+    0 8px 24px rgba(114, 47, 55, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Icon pulse effect */
+.iconPulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.1);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.serviceCard:hover .iconPulse {
+  animation: iconPulseAnim 1.5s ease-out infinite;
+}
+
+@keyframes iconPulseAnim {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ===== CONTENT ===== */
+.serviceContent {
+  position: relative;
+  z-index: 2;
+  transform: translateZ(20px);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.serviceContent h3 {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-maroon);
+  margin: 0 0 12px 0;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.serviceCard:hover .serviceContent h3 {
+  color: var(--primary-maroon-dark);
+  letter-spacing: 0.3px;
+}
+
+.serviceContent p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.serviceCard:hover .serviceContent p {
+  color: var(--neutral-charcoal);
+}
+
+
+
+/* ===== BOTTOM GLOW BAR ===== */
+.serviceGlow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), var(--primary-maroon), var(--accent-gold), transparent);
+  background-size: 300% 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease, height 0.4s ease;
+  z-index: 3;
+  border-radius: 0 0 24px 24px;
+  animation: shimmerBar 3s linear infinite;
+}
+
+.serviceCard:hover .serviceGlow {
+  opacity: 1;
+  height: 4px;
+}
+
+@keyframes shimmerBar {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ===== CTA BUTTON ===== */
+.servicesCta {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.servicesButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 44px;
+  font-size: 1.05rem;
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family);
+  color: var(--text-white);
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 20px rgba(114, 47, 55, 0.25), 0 0 0 0 rgba(114, 47, 55, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.servicesButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-maroon-light) 0%, var(--primary-maroon) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.servicesButton:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 35px rgba(114, 47, 55, 0.35), 0 0 0 4px rgba(114, 47, 55, 0.08);
+}
+
+.servicesButton:hover::before {
+  opacity: 1;
+}
+
+.servicesButton span {
+  position: relative;
+  z-index: 1;
+}
+
+.servicesButton .btnArrow {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.servicesButton:hover .btnArrow {
+  transform: translateX(5px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 70px 20px;
+  }
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .sectionHeader {
+    margin-bottom: 50px;
+  }
+  .serviceCard {
+    min-height: auto;
+  }
+  .cardNumber {
+    font-size: 2.5rem;
+  }
+}

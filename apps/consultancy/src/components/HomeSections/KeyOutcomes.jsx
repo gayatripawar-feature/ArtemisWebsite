@@ -63,7 +63,6 @@ const DigitalVisibilityIcon = () => (
 );
 
 
-
 const outcomes = [
   {
     id: 1,

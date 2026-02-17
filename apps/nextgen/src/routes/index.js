@@ -5,6 +5,8 @@ import Expertise from '../pages/Expertise';
 import Contact from '../pages/Contact';
 import Careers from '../pages/Careers';
 import About from '../pages/About';
+import JobApply from '../pages/JobApply';
+import Erp from '../pages/Erp';
 
 export const routeConfig = [
   {
@@ -23,6 +25,11 @@ export const routeConfig = [
     label: 'Expertise',
   },
   {
+    path: '/erp',
+    component: Erp,
+    label: 'ERP',
+  },
+  {
     path: '/contact',
     component: Contact,
     label: 'Contact Us',
@@ -36,6 +43,13 @@ export const routeConfig = [
     path: '/about',
     component: About,
     label: 'About Us',
+  },
+];
+
+export const hiddenRoutes = [
+  {
+    path: '/careers/apply/:id',
+    component: JobApply,
   },
 ];
 
