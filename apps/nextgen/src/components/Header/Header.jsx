@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
+import artemisLogo from "../../assets/images/artemis.png";
 import {
   getTechIcon,
   getIndustryIcon,
@@ -10,7 +11,6 @@ import {
   serviceBrandColors,
 } from "./TechIcons.jsx";
 import { getErpIcon, erpBrandColors } from "./ErpIcons.jsx";
-import artemisLogo from "../../assets/images/artemis.png";
 
 const servicesItems = [
   { label: "Custom Software Development", hash: "custom-software-development" },
@@ -174,8 +174,6 @@ const industryItems = [
   { label: "Technology", hash: "technology" },
   { label: "Sales", hash: "sales" },
   { label: "Marketing", hash: "marketing" },
-
-
 ];
 
 const erpProducts = [
@@ -283,19 +281,18 @@ const Header = () => {
     setOpenMobileDropdown(null);
   }, []);
 
+
+
   const handleItemMouseEnter = useCallback((key) => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
     setOpenDropdown(key);
   }, []);
 
   const handleNavMouseLeave = useCallback(() => {
-    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 120);
+    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
   }, []);
 
-  const handleDropdownMouseEnter = useCallback((key) => {
-    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-    setOpenDropdown(key);
-  }, []);
+
 
   const headerClasses = [
     styles.header,
@@ -380,14 +377,6 @@ const Header = () => {
         className={`${styles.megaMenu} ${openDropdown === "expertise" ? styles.megaMenuVisible : ""}`}
         onMouseEnter={() => {
           if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-          handleDropdownMouseEnter("expertise");
-        }}
-        onMouseLeave={() => {
-          if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-          dropdownTimeout.current = setTimeout(
-            () => setOpenDropdown(null),
-            120,
-          );
         }}
       >
         <div className={styles.megaMenuInner}>
@@ -509,14 +498,6 @@ const Header = () => {
         }`}
         onMouseEnter={() => {
           if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-          handleDropdownMouseEnter(key);
-        }}
-        onMouseLeave={() => {
-          if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-          dropdownTimeout.current = setTimeout(
-            () => setOpenDropdown(null),
-            120,
-          );
         }}
       >
         <div className={styles.dropdownInner}>
@@ -552,14 +533,16 @@ const Header = () => {
             </Link>
           </div>
 
-          <nav
-            className={styles.navDesktop}
-            onMouseLeave={() => openDropdown && setOpenDropdown(null)}
-          >
+
+          <nav className={styles.navDesktop} onMouseLeave={handleNavMouseLeave}>
             <ul className={styles.navList}>
               <li
                 className={styles.navItem}
-                onMouseEnter={() => openDropdown && setOpenDropdown(null)}
+                onMouseEnter={() => {
+                  if (dropdownTimeout.current)
+                    clearTimeout(dropdownTimeout.current);
+                  setOpenDropdown(null);
+                }}
               >
                 <Link
                   to="/"
@@ -586,7 +569,11 @@ const Header = () => {
 
               <li
                 className={styles.navItem}
-                onMouseEnter={() => openDropdown && setOpenDropdown(null)}
+                onMouseEnter={() => {
+                  if (dropdownTimeout.current)
+                    clearTimeout(dropdownTimeout.current);
+                  setOpenDropdown(null);
+                }}
               >
                 <Link
                   to="/contact"
@@ -599,7 +586,11 @@ const Header = () => {
 
               <li
                 className={styles.navItem}
-                onMouseEnter={() => openDropdown && setOpenDropdown(null)}
+                onMouseEnter={() => {
+                  if (dropdownTimeout.current)
+                    clearTimeout(dropdownTimeout.current);
+                  setOpenDropdown(null);
+                }}
               >
                 <Link
                   to="/careers"
@@ -612,7 +603,11 @@ const Header = () => {
 
               <li
                 className={styles.navItem}
-                onMouseEnter={() => openDropdown && setOpenDropdown(null)}
+                onMouseEnter={() => {
+                  if (dropdownTimeout.current)
+                    clearTimeout(dropdownTimeout.current);
+                  setOpenDropdown(null);
+                }}
               >
                 <Link
                   to="/about"
