@@ -48,7 +48,7 @@ export const routeConfig = [
 
 export const hiddenRoutes = [
   {
-    path: '/careers/apply/:id',
+    path: '/careers/apply/:jobId',
     component: JobApply,
   },
 ];

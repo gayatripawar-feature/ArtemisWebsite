@@ -46,7 +46,7 @@
   --color-border-hover: rgba(0, 0, 0, 0.12);
 
   /* Spacing */
-  --header-height: 64px;
+  --header-height: 80px;
   --container-max: 1280px;
   --container-padding: 24px;
 
@@ -70,26 +70,34 @@
   --radius-full: 9999px;
 
   /* Technology Brand Colors */
-  --tech-angular: #DD0031;
   --tech-react: #61DAFB;
-  --tech-vue: #4FC08D;
-  --tech-node: #339933;
-  --tech-pwa: #5A0FC8;
-  --tech-flutter: #02569B;
   --tech-react-native: #61DAFB;
-  --tech-ionic: #3880FF;
-  --tech-firebase: #FFCA28;
-  --tech-serverless: #FD5750;
-  --tech-electron: #47848F;
-  --tech-nextjs: #000000;
+  --tech-cnet: #68217A;
+  --tech-aspnet: #512BD4;
+  --tech-mysql: #4479A1;
+  --tech-azure-devops: #0078D7;
+  --tech-html5: #E34F26;
+  --tech-css3: #1572B6;
+  --tech-javascript: #F7DF1E;
+  --tech-node: #339933;
+  --tech-google-apps-script: #4285F4;
+  --tech-excel: #217346;
+  --tech-ai-tools: #FF6F61;
+
+
+
 
   /* Industry Colors */
+  --industry-realEstate: #C9A84C;
+  --industry-construction: #6B7280;
   --industry-finance: #C9A84C;
-  --industry-education: #3B82F6;
-  --industry-manufacturing: #6B7280;
-  --industry-technology: #06B6D4;
   --industry-ecommerce: #10B981;
-  --industry-transportation: #F97316;
+  --industry-technology: #06B6D4;
+  --industry-sales: #A855F7;
+  --industry-marketing: #8B5CF6;
+
+
+
 
   /* Service Colors */
   --service-custom-software: #6366F1;

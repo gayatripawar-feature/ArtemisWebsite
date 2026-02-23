@@ -1,107 +1,211 @@
 import React from "react";
 
 
-export const AngularIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M12 2L3 6.5V17.5L12 22L21 17.5V6.5L12 2ZM12 4.15L18.55 7.38L12 18.54L5.45 7.38L12 4.15ZM12 6.92L8.44 14.47H10.19L10.93 12.68H13.05L13.79 14.47H15.54L12 6.92ZM12 9.72L13.04 12.04H10.96L12 9.72Z"/>
-  </svg>
-);
 
+// React.js
 export const ReactIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <circle cx="12" cy="12" r="2.2"/>
-    <path d="M12 8.7c3.3 0 6.2.6 8.2 1.6.9.5 1.6 1 2 1.7.5.7.5 1.3 0 2s-1.1 1.2-2 1.7c-2 1-4.9 1.6-8.2 1.6s-6.2-.6-8.2-1.6c-.9-.5-1.6-1-2-1.7-.5-.7-.5-1.3 0-2s1.1-1.2 2-1.7c2-1 4.9-1.6 8.2-1.6z" fill="none" stroke="currentColor" strokeWidth="1"/>
-    <path d="M8.3 10.3c1.6-2.8 3.7-5 5.6-6.2.9-.5 1.7-.8 2.4-.7.7.1 1.1.6 1.4 1.3.5 1.5 0 3.9-1.3 6.5-1.6 2.8-3.7 5-5.6 6.2-.9.5-1.7.8-2.4.7-.7-.1-1.1-.6-1.4-1.3-.5-1.5 0-3.9 1.3-6.5z" fill="none" stroke="currentColor" strokeWidth="1"/>
-    <path d="M8.3 13.7c-1.6-2.8-1.8-5.1-1.3-6.5.3-.7.7-1.2 1.4-1.3.7-.1 1.5.2 2.4.7 1.9 1.2 4 3.4 5.6 6.2 1.3 2.6 1.8 5 1.3 6.5-.3.7-.7 1.2-1.4 1.3-.7.1-1.5-.2-2.4-.7-1.9-1.2-4-3.4-5.6-6.2z" fill="none" stroke="currentColor" strokeWidth="1"/>
+  <svg
+    className={className}
+    viewBox="0 0 841.9 595.3"
+    width="20"
+    height="20"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="40"
+  >
+    <circle cx="420.9" cy="296.5" r="45" fill="currentColor" stroke="none" />
+    <ellipse cx="420.9" cy="296.5" rx="300" ry="115" />
+    <ellipse cx="420.9" cy="296.5" rx="300" ry="115" transform="rotate(60 420.9 296.5)" />
+    <ellipse cx="420.9" cy="296.5" rx="300" ry="115" transform="rotate(120 420.9 296.5)" />
   </svg>
 );
 
 
-
-
-
-export const VueIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M2 3H5.5L12 14.1L18.5 3H22L12 21L2 3Z"/>
-    <path d="M6.5 3H9.5L12 7.6L14.5 3H17.5L12 13L6.5 3Z" opacity="0.6"/>
-  </svg>
-);
-
-export const NodeIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M12 2L3 7V17L12 22L21 17V7L12 2ZM12 4.2L18.8 8V16L12 19.8L5.2 16V8L12 4.2Z"/>
-    <path d="M12 8V16L16.5 13.5V10.5L12 8Z" opacity="0.7"/>
-  </svg>
-);
-
-export const PWAIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M4 4H20V16H4V4ZM6 6V14H18V6H6Z"/>
-    <path d="M8 18H16V20H8V18Z"/>
-    <path d="M10 8L14 12L10 12V8Z"/>
-  </svg>
-);
-
-export const FlutterIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M14.3 2L4 12.3L7.1 15.4L20.5 2H14.3Z"/>
-    <path d="M14.3 11.4L8.5 17.2L11.6 20.3L14.7 17.2L20.5 11.4H14.3Z" opacity="0.7"/>
-  </svg>
-);
-
+// React Native
 export const ReactNativeIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <circle cx="12" cy="12" r="2.2"/>
-    <path d="M12 8.7c3.3 0 6.2.6 8.2 1.6.9.5 1.6 1 2 1.7.5.7.5 1.3 0 2s-1.1 1.2-2 1.7c-2 1-4.9 1.6-8.2 1.6s-6.2-.6-8.2-1.6c-.9-.5-1.6-1-2-1.7-.5-.7-.5-1.3 0-2s1.1-1.2 2-1.7c2-1 4.9-1.6 8.2-1.6z" fill="none" stroke="currentColor" strokeWidth="1"/>
-    <path d="M8.3 10.3c1.6-2.8 3.7-5 5.6-6.2.9-.5 1.7-.8 2.4-.7.7.1 1.1.6 1.4 1.3.5 1.5 0 3.9-1.3 6.5-1.6 2.8-3.7 5-5.6 6.2-.9.5-1.7.8-2.4.7-.7-.1-1.1-.6-1.4-1.3-.5-1.5 0-3.9 1.3-6.5z" fill="none" stroke="currentColor" strokeWidth="1"/>
-    <path d="M8.3 13.7c-1.6-2.8-1.8-5.1-1.3-6.5.3-.7.7-1.2 1.4-1.3.7-.1 1.5.2 2.4.7 1.9 1.2 4 3.4 5.6 6.2 1.3 2.6 1.8 5 1.3 6.5-.3.7-.7 1.2-1.4 1.3-.7.1-1.5-.2-2.4-.7-1.9-1.2-4-3.4-5.6-6.2z" fill="none" stroke="currentColor" strokeWidth="1"/>
-    <rect x="3" y="20" width="18" height="2" rx="1" opacity="0.4"/>
+  <svg
+    className={className}
+    viewBox="0 0 841.9 595.3"
+    width="20"
+    height="20"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="40"
+  >
+    <circle cx="420.9" cy="296.5" r="45" fill="currentColor" stroke="none" />
+    <ellipse cx="420.9" cy="296.5" rx="300" ry="115" />
+    <ellipse cx="420.9" cy="296.5" rx="300" ry="115" transform="rotate(60 420.9 296.5)" />
+    <ellipse cx="420.9" cy="296.5" rx="300" ry="115" transform="rotate(120 420.9 296.5)" />
   </svg>
 );
 
-export const IonicIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-    <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-    <circle cx="18.5" cy="5.5" r="1.8"/>
+// C#.NET
+export const CSharpIcon = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 256 256"
+    width="20"
+    height="20"
+    fill="currentColor"
+  >
+    <path d="M128 8l104 60v120l-104 60L24 188V68L128 8z" />
+    <path
+      d="M110 80c-28 0-50 20-50 48s22 48 50 48c10 0 20-3 28-9v-20c-8 8-17 12-26 12-18 0-32-13-32-31s14-31 32-31c9 0 18 4 26 12V89c-8-6-18-9-28-9z"
+      fill="#fff"
+    />
+
+    <path
+      d="M150 95h10l-2 14h12l2-14h10l-2 14h12v10h-14l-2 14h12v10h-14l-2 14h-10l2-14h-12l-2 14h-10l2-14h-12v-10h14l2-14h-12v-10h14l2-14z"
+      fill="#fff"
+    />
   </svg>
 );
 
-export const FirebaseIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M5.2 18.6L7.5 3.4L11.2 10.5L5.2 18.6Z" opacity="0.7"/>
-    <path d="M12 21L5.2 18.6L11.2 10.5L12 21Z"/>
-    <path d="M12 21L18.8 18.6L15.3 6.3L12.8 10.2L12 21Z"/>
-    <path d="M15.3 6.3L18.8 18.6L12 21L11.2 10.5L15.3 6.3Z" opacity="0.5"/>
+
+// ASP.NET
+export const AspNetIcon = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 256 256"
+    width="20"
+    height="20"
+    fill="currentColor"
+  >
+    <path d="M128 8l104 60v120l-104 60L24 188V68L128 8z" />
+
+    <text
+      x="128"
+      y="150"
+      textAnchor="middle"
+      fontSize="70"
+      fontWeight="bold"
+      fill="#ffffff"
+      fontFamily="Segoe UI, Arial, sans-serif"
+    >
+      .NET
+    </text>
   </svg>
 );
 
-export const ServerlessIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M4 8H14L12 11H4L4 8Z"/>
-    <path d="M6 12H16L14 15H6V12Z"/>
-    <path d="M10 16H20L18 19H10V16Z"/>
+
+// MySQL
+export const MySQLIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="20" height="20">
+    <path d="M2 12c0-3.5 2-6 5-6s5 2.5 5 6-2 6-5 6-5-2.5-5-6z"/>
+    <path d="M17 12c0-3.5 2-6 5-6s5 2.5 5 6-2 6-5 6-5-2.5-5-6z"/>
+    <path d="M7 12h10"/>
   </svg>
 );
 
-export const ElectronIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <circle cx="12" cy="12" r="2"/>
-    <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" strokeWidth="1.2"/>
-    <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" strokeWidth="1.2" transform="rotate(60 12 12)"/>
-    <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" strokeWidth="1.2" transform="rotate(120 12 12)"/>
+//Azure
+export const AzureIcon = ({ className, size = 20 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 256 256"
+    fill="currentColor"
+  >
+    <path d="M121.7 21.6L21.5 198.3c-2.4 4.3.7 9.7 5.6 9.7h39.5c3.1 0 5.9-1.7 7.4-4.4l80.4-141.5 43.5 76.6-55.2 69.3h78.5c2.7 0 5.1-1.2 6.7-3.3 1.6-2.1 2.1-4.8 1.2-7.4L146.6 21.6c-1.4-3.1-4.4-5.1-7.8-5.1s-6.4 2-7.8 5.1z"/>
   </svg>
 );
 
-export const NextjsIcon = ({ className }) => (
+
+// HTML5
+export const HTML5Icon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M8 8V16L16.5 6" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round"/>
-    <path d="M16 8V14" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round"/>
+    <polygon points="2,2 22,2 20,22 12,24 4,22"/>
+    <path d="M6 6h12M6 10h10M6 14h8" stroke="white" strokeWidth="1.5" fill="none"/>
   </svg>
 );
 
-/* Industry Icons */
+// CSS3
+export const CSS3Icon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+    <polygon points="2,2 22,2 20,22 12,24 4,22" opacity="0.9"/>
+    <circle cx="7" cy="10" r="1.5" fill="currentColor"/>
+    <circle cx="12" cy="10" r="1.5" fill="currentColor"/>
+    <circle cx="17" cy="10" r="1.5" fill="currentColor"/>
+    <path d="M7 15h10" stroke="white" strokeWidth="1.5"/>
+  </svg>
+);
+
+// JavaScript
+export const JavaScriptIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+    <rect x="2" y="2" width="20" height="20" rx="2" fill="#F7DF1E" opacity="0.3"/>
+    <text x="6" y="18" fontSize="13" fontWeight="bold" fill="currentColor">JS</text>
+  </svg>
+);
+
+// Node.js
+
+
+export const NodeIcon = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 256 272"
+    fill="currentColor"
+  >
+    <path d="M128 0L0 74v124l128 74 128-74V74L128 0z"/>
+    <path d="M176.6 192.4c-6.6 3.8-15.9 5.4-25.1 5.4-18.6 0-29.3-7.7-34.8-17.9l15.1-8.7c2.9 5.1 8.2 9.1 19.2 9.1 9.1 0 14.9-3.6 14.9-8.6 0-6-4.7-8.1-16-11.3-14.1-4-23.5-9-23.5-19.6 0-9.8 7.5-17.3 19.2-19.4 14.3-2.6 25.1 2.7 31.6 13.5l-14.7 8.4c-2.9-5.1-6.6-7.1-11.8-7.1-5.4 0-9.1 2.4-9.1 6.6 0 4.6 2.9 6.6 13.5 9.8 17.5 5.3 26 10.4 26 21.1 0 11.1-8.8 18.7-23.5 22.1z"/>
+  </svg>
+);
+
+
+// Google Apps Script
+export const GoogleAppsIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="20" height="20">
+    <rect x="3" y="3" width="7" height="7" rx="1"/>
+    <rect x="14" y="3" width="7" height="7" rx="1"/>
+    <rect x="3" y="14" width="7" height="7" rx="1"/>
+    <rect x="14" y="14" width="7" height="7" rx="1"/>
+  </svg>
+);
+
+// Microsoft Excel
+export const ExcelIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="20" height="20">
+    <rect x="2" y="2" width="20" height="20" rx="2"/>
+    <path d="M6 8L10 12L6 16M14 8L18 12L14 16M10 12H14"/>
+  </svg>
+);
+
+// AI Tools
+export const AIToolsIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="20" height="20">
+    <circle cx="12" cy="6" r="2" fill="currentColor"/>
+    <circle cx="7" cy="14" r="2" fill="currentColor"/>
+    <circle cx="17" cy="14" r="2" fill="currentColor"/>
+    <circle cx="12" cy="22" r="2" fill="currentColor"/>
+    <path d="M12 8v4M7 16v4M17 16v4M12 15L9 13M12 15L15 13"/>
+  </svg>
+);
+
+// /* Industry Icons */
+
+// Real Estate
+export const RealEstateIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+    <path d="M3 21V10l9-7 9 7v11H3z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+    <rect x="9" y="14" width="6" height="7" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+    <path d="M9 17h6" fill="none" stroke="currentColor" strokeWidth="1"/>
+  </svg>
+);
+
+// Construction
+export const ConstructionIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+    <path d="M5 21l7-14 7 14H5z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+    <path d="M12 7V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M9 21v-4h6v4" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+    <circle cx="12" cy="3" r="1.5" fill="currentColor" opacity="0.5"/>
+  </svg>
+);
+
+// Finance
 export const FinanceIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
     <path d="M12 2L2 7V9H22V7L12 2Z"/>
@@ -113,21 +217,16 @@ export const FinanceIcon = ({ className }) => (
   </svg>
 );
 
-export const EducationIcon = ({ className }) => (
+// E-commerce
+export const ECommerceIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M12 3L1 9L12 15L21 10.1V16H23V9L12 3Z"/>
-    <path d="M5 13.2V17.7L12 21L19 17.7V13.2L12 17L5 13.2Z" opacity="0.7"/>
+    <path d="M7 22C6.45 22 6 21.55 6 21C6 20.45 6.45 20 7 20C7.55 20 8 20.45 8 21C8 21.55 7.55 22 7 22Z"/>
+    <path d="M17 22C16.45 22 16 21.55 16 21C16 20.45 16.45 20 17 20C17.55 20 18 20.45 18 21C18 21.55 17.55 22 17 22Z"/>
+    <path d="M1 2H4L6.6 14.6C6.8 15.4 7.5 16 8.3 16H17.5C18.3 16 18.9 15.4 19.1 14.6L21 6H5.2"/>
   </svg>
 );
 
-export const ManufacturingIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M22 22H2V10L8 14V10L14 14V10L22 14V22Z"/>
-    <rect x="4" y="2" width="3" height="8" rx="0.5"/>
-    <rect x="5" y="1" width="1" height="2"/>
-  </svg>
-);
-
+// Technology
 export const TechnologyIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
     <rect x="2" y="4" width="20" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
@@ -139,75 +238,78 @@ export const TechnologyIcon = ({ className }) => (
   </svg>
 );
 
-export const ECommerceIcon = ({ className }) => (
+// Sales
+export const SalesIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M7 22C6.45 22 6 21.55 6 21C6 20.45 6.45 20 7 20C7.55 20 8 20.45 8 21C8 21.55 7.55 22 7 22Z"/>
-    <path d="M17 22C16.45 22 16 21.55 16 21C16 20.45 16.45 20 17 20C17.55 20 18 20.45 18 21C18 21.55 17.55 22 17 22Z"/>
-    <path d="M1 2H4L6.6 14.6C6.8 15.4 7.5 16 8.3 16H17.5C18.3 16 18.9 15.4 19.1 14.6L21 6H5.2"/>
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
-export const TransportationIcon = ({ className }) => (
+// Marketing
+export const MarketingIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M4 16V6C4 4.9 4.9 4 6 4H15L20 9V16" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M14 4V10H20" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-    <circle cx="7.5" cy="18" r="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-    <circle cx="16.5" cy="18" r="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M9.5 18H14.5" stroke="currentColor" strokeWidth="1.5"/>
+    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" fill="none" stroke="currentColor" strokeWidth="1.5"/>
   </svg>
 );
 
-/* Icon mapping by label */
-const techIconMap = {
-  "Angular": AngularIcon,
-  "React": ReactIcon,
-  "VueJS": VueIcon,
-  "NodeJS": NodeIcon,
-  "PWA": PWAIcon,
-  "Flutter": FlutterIcon,
+
+export const techIconMap = {
+  "React.js": ReactIcon,
   "React Native": ReactNativeIcon,
-  "Ionic": IonicIcon,
-  "Firebase": FirebaseIcon,
-  "Serverless": ServerlessIcon,
-  "Electron": ElectronIcon,
-  "Nextjs": NextjsIcon,
+  "C#.NET": CSharpIcon,
+  "ASP.NET": AspNetIcon,
+  "MySQL": MySQLIcon,
+  "Azure DevOps": AzureIcon,
+  "HTML5": HTML5Icon,
+  "CSS3": CSS3Icon,
+  "JavaScript": JavaScriptIcon,
+  "Node.js": NodeIcon,
+  "Google Apps Script": GoogleAppsIcon,
+  "Microsoft Excel": ExcelIcon,
+  "AI Tools": AIToolsIcon,
 };
 
-const industryIconMap = {
+
+export const industryIconMap = {
+  "Real Estate": RealEstateIcon,
+  "Construction": ConstructionIcon,
   "Finance": FinanceIcon,
-  "Education": EducationIcon,
-  "Manufacturing": ManufacturingIcon,
-  "Technology": TechnologyIcon,
   "E-Commerce": ECommerceIcon,
-  "Transportation": TransportationIcon,
+  "Technology": TechnologyIcon,
+  "Sales": SalesIcon,
+  "Marketing": MarketingIcon,
 };
 
 export const getTechIcon = (label) => techIconMap[label] || null;
 export const getIndustryIcon = (label) => industryIconMap[label] || null;
 
-/* Brand color mapping */
+
+
 export const techBrandColors = {
-  "Angular": "var(--tech-angular)",
-  "React": "var(--tech-react)",
-  "VueJS": "var(--tech-vue)",
-  "NodeJS": "var(--tech-node)",
-  "PWA": "var(--tech-pwa)",
-  "Flutter": "var(--tech-flutter)",
+  "React.js": "var(--tech-react)",
   "React Native": "var(--tech-react-native)",
-  "Ionic": "var(--tech-ionic)",
-  "Firebase": "var(--tech-firebase)",
-  "Serverless": "var(--tech-serverless)",
-  "Electron": "var(--tech-electron)",
-  "Nextjs": "var(--tech-nextjs)",
+  "C#.NET": "var(--tech-cnet)",
+  "ASP.NET": "var(--tech-aspnet)",
+  "MySQL": "var(--tech-mysql)",
+  "Azure DevOps": "var(--tech-azure-devops)",
+  "HTML5": "var(--tech-html5)",
+  "CSS3": "var(--tech-css3)",
+  "JavaScript": "var(--tech-javascript)",
+  "Node.js": "var(--tech-node)",
+  "Google Apps Script": "var(--tech-google-apps-script)",
+  "Microsoft Excel": "var(--tech-excel)",
+  "AI Tools": "var(--tech-ai-tools)",
 };
 
+
 export const industryBrandColors = {
+  "Real Estate": "#C9A84C",
+  "Construction": "#6B7280",
   "Finance": "var(--industry-finance)",
-  "Education": "var(--industry-education)",
-  "Manufacturing": "var(--industry-manufacturing)",
-  "Technology": "var(--industry-technology)",
   "E-Commerce": "var(--industry-ecommerce)",
-  "Transportation": "var(--industry-transportation)",
+  "Technology": "var(--industry-technology)",
+  "Sales": "#A855F7",
+  "Marketing": "#8B5CF6",
 };
 
 export const serviceBrandColors = {

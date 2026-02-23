@@ -11,8 +11,7 @@ import Services from '../pages/Services';
 import Projects from '../pages/Projects';
 import Contact from '../pages/Contact';
 import WhyArtemis from '../pages/WhyArtemis';
-import { OurTeam } from '../pages/OurTeam';
-
+import TeamPage from '../pages/TeamPage';
 /**
  * Route configuration array
  * Each route has: path, component, and label for navigation
@@ -46,7 +45,7 @@ export const routeConfig = [
   },
    {
     path: '/our-team',
-    component: OurTeam,
+    component: TeamPage,
     label: 'Our Team',
   },
   {

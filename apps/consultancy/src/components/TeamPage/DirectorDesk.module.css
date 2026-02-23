@@ -1,0 +1,323 @@
+
+
+/* ===== SECTION WRAPPER ===== */
+.directorsSection {
+  background: var(--neutral-charcoal-dark);
+  padding: 90px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative maroon strip on top */
+.directorsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-secondary);
+}
+
+/* Background watermark */
+.directorsSection::after {
+  content: '"';
+  position: absolute;
+  top: -40px;
+  right: 6%;
+  font-size: 420px;
+  font-family: Georgia, serif;
+  color: rgba(255, 255, 255, 0.025);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ===== HEADER ===== */
+.directorsHeader {
+  text-align: center;
+  margin-bottom: 64px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.directorsEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+}
+
+.directorsEyebrow::before,
+.directorsEyebrow::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.6;
+}
+
+.directorsTitle {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--secondary-offwhite);
+  margin: 0 0 16px;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+}
+
+.directorsTitle span {
+  color: var(--accent-gold);
+}
+
+.directorsSubtitle {
+  font-size: 16px;
+  color: rgba(250, 249, 246, 0.55);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+/* ===== CARDS LIST ===== */
+.directorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== SINGLE DIRECTOR CARD ===== */
+.directorCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  transition: border-color var(--transition-normal), background var(--transition-normal), transform var(--transition-normal);
+}
+
+.directorCard:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(212, 175, 55, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Alternate even cards — message left, photo right */
+.directorCard.reverse {
+  grid-template-columns: 1fr 260px;
+}
+
+.directorCard.reverse .directorPhotoCol {
+  order: 2;
+}
+
+.directorCard.reverse .directorContentCol {
+  order: 1;
+}
+
+/* ===== PHOTO COLUMN ===== */
+.directorPhotoCol {
+  position: relative;
+  min-height: 340px;
+}
+
+.directorPhotoCol img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Tenure badge */
+.directorTenureBadge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(20, 28, 40, 0.82);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  color: var(--accent-gold-light);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+/* ===== CONTENT COLUMN ===== */
+.directorContentCol {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Identity block */
+.directorIdentity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.directorTitleLabel {
+  font-size: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--dir-accent, var(--accent-gold));
+  margin: 0;
+}
+
+.directorName {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--secondary-offwhite);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.directorCredentials {
+  font-size: 12.5px;
+  color: rgba(250, 249, 246, 0.45);
+  font-family: 'Trebuchet MS', sans-serif;
+  font-style: italic;
+}
+
+/* Message block */
+.directorMessageWrap {
+  flex: 1;
+  position: relative;
+}
+
+.directorQuoteMark {
+  font-size: 64px;
+  line-height: 0.6;
+  color: var(--dir-accent, var(--accent-gold));
+  opacity: 0.4;
+  font-family: Georgia, serif;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.directorMessage {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: rgba(250, 249, 246, 0.72);
+  font-family: Georgia, serif;
+  font-style: italic;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Footer: signature + focus areas */
+.directorCardFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  flex-wrap: wrap;
+}
+
+.directorSignature {
+  font-family: 'Georgia', serif;
+  font-size: 17px;
+  font-style: italic;
+  color: var(--secondary-offwhite);
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+}
+
+.directorFocusTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.directorFocusTag {
+  padding: 4px 10px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 10.5px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  color: rgba(250, 249, 246, 0.55);
+  letter-spacing: 0.3px;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.directorCard:hover .directorFocusTag {
+  border-color: rgba(212, 175, 55, 0.3);
+  color: var(--accent-gold-light);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+  .directorCard,
+  .directorCard.reverse {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 240px auto; */
+  }
+
+  .directorPhotoCol {
+    min-height: 240px;
+  }
+
+  .directorCard.reverse .directorPhotoCol {
+    order: 1;
+  }
+
+  .directorCard.reverse .directorContentCol {
+    order: 2;
+  }
+
+  .directorPhotoCol::after,
+  .directorCard.reverse .directorPhotoCol::after {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+  }
+
+  .directorContentCol {
+    padding: 24px 24px 28px;
+  }
+
+  .directorCardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .directorFocusTags {
+    justify-content: flex-start;
+  }
+
+  .directorsList {
+    padding: 0 16px;
+    gap: 24px;
+  }
+}

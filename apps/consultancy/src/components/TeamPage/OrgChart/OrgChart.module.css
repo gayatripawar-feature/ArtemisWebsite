@@ -1,0 +1,521 @@
+/* ===== SECTION ===== */
+.section {
+  background: var(--neutral-charcoal-dark);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+/* Background pattern */
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(114, 47, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+
+ .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.6;
+}
+
+.title {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--secondary-offwhite);
+  line-height: 1.15;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.title span {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+
+
+
+/* ===== TOP NODE ===== */
+.topNodeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.topNode {
+  position: relative;
+  background: var(--gradient-primary);
+  padding: 28px 56px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(114, 47, 55, 0.4),
+    0 0 60px rgba(114, 47, 55, 0.15);
+  transition: transform var(--transition-fast);
+}
+
+.topNode:hover {
+  transform: scale(1.03);
+}
+
+.topNodeGlow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: var(--gradient-secondary);
+  opacity: 0.3;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.topNodeTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0 0 6px;
+  letter-spacing: 1.5px;
+}
+
+.topNodeSub {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+/* ===== SPINE / CONNECTORS ===== */
+.spine {
+  width: 2px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--primary-maroon-light), rgba(255, 255, 255, 0.15));
+}
+
+.spineHorizontal {
+  width: 66%;
+  max-width: 780px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 15%,
+    rgba(255, 255, 255, 0.15) 85%,
+    transparent 100%
+  );
+}
+
+/* ===== OFFICES GRID ===== */
+.officesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.officeCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.officeConnector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40px;
+  position: relative;
+}
+
+.officeConnector::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.connectorDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 0 12px currentColor;
+}
+
+/* ===== OFFICE CARD ===== */
+.officeCard {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.officeCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.officeHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.officeHeader::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.officeIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.officeLabel {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.officeName {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== DEPARTMENT LIST ===== */
+.deptList {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deptCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  animation: fadeInUp 0.4s ease both;
+}
+
+.deptCardOpen {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.deptHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--secondary-offwhite);
+  font-family: inherit;
+  transition: background var(--transition-fast);
+}
+
+.deptHeader:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.deptAccentBar {
+  width: 3px;
+  height: 28px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast), height var(--transition-fast);
+}
+
+.deptCardOpen .deptAccentBar {
+  opacity: 1;
+  height: 32px;
+}
+
+.deptHeaderText {
+  flex: 1;
+  min-width: 0;
+}
+
+.deptHeadTitle {
+  display: block;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.3px;
+}
+
+.deptHeadNote {
+  display: inline-block;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--accent-gold);
+  margin-top: 3px;
+  background: rgba(212, 175, 55, 0.12);
+  padding: 2px 8px;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+}
+
+.deptChevron {
+  color: rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color var(--transition-fast);
+  flex-shrink: 0;
+  display: flex;
+}
+
+.deptChevronOpen {
+  transform: rotate(180deg);
+  color: var(--accent-gold);
+}
+
+/* ===== DEPT BODY / ROLE TREE ===== */
+.deptBody {
+  padding: 4px 16px 16px 28px;
+  animation: slideReveal 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.roleTreeItem {
+  position: relative;
+}
+
+.roleTreeNode {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  position: relative;
+}
+
+.roleTreeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.roleTreeNode:hover .roleTreeDot {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.roleTreeContent {
+  flex: 1;
+}
+
+.roleTreeRole {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.4;
+  transition: color var(--transition-fast);
+}
+
+.roleTreeNode:hover .roleTreeRole {
+  color: var(--secondary-offwhite);
+}
+
+.roleTreeNote {
+  display: inline-block;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 9px;
+  color: var(--accent-gold-light);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 1px 8px;
+  border-radius: 8px;
+  margin-top: 2px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.roleTreeChildren {
+  padding-left: 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  margin-left: 3px;
+}
+
+/* ===== PROJECTS ===== */
+.projectsSection {
+  padding: 0 16px 20px;
+}
+
+.projectsTitle {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0 10px;
+  padding-left: 4px;
+}
+
+.projectsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projectChip {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 5px 14px;
+  cursor: default;
+  transition: all var(--transition-fast);
+}
+
+.projectChip:hover {
+  background: var(--chip-color, var(--primary-maroon));
+  color: var(--text-white);
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 960px) {
+  .officesGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    gap: 32px;
+  }
+
+  .spineHorizontal {
+    display: none;
+  }
+
+  .officeConnector {
+    height: 28px;
+  }
+
+
+
+
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 64px 0 80px;
+  }
+
+  .topNode {
+    padding: 20px 32px;
+  }
+
+  .topNodeTitle {
+    font-size: 15px;
+  }
+
+
+}

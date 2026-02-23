@@ -49,7 +49,7 @@ const quickLinks = [
 
   { label: "Contact Us", path: "/contact" },
   { label: "Careers", path: "/careers" },
-  { label: "About Us", path: "/about-us" },
+  { label: "About Us", path: "/about" },
 ];
 
 const serviceLinks = [
