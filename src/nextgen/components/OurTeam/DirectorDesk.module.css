@@ -1,0 +1,249 @@
+/* ===== SECTION WRAPPER ===== */
+.directorsSection {
+  background: var(--neutral-charcoal);
+  padding: 90px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.directorsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-secondary);
+}
+
+/* .directorsSection::after {
+  content: '"';
+  position: absolute;
+  top: -40px;
+  right: 6%;
+  font-size: 420px;
+  font-family: Georgia, serif;
+  color: rgba(255, 255, 255, 0.025);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+} */
+
+/* ===== HEADER ===== */
+.directorsHeader {
+  text-align: center;
+  margin-bottom: 64px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.directorsEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+}
+
+.directorsEyebrow::before,
+.directorsEyebrow::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.6;
+}
+
+.directorsTitle {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--secondary-offwhite);
+  margin: 0 0 16px;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+}
+
+.directorsTitle span {
+  color: var(--accent-gold);
+}
+
+/* ===== CARDS LIST ===== */
+.directorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== SINGLE DIRECTOR CARD ===== */
+.directorCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  transition: border-color var(--transition-normal), background var(--transition-normal), transform var(--transition-normal);
+}
+
+.directorCard:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(212, 175, 55, 0.25);
+  transform: translateY(-3px);
+}
+
+.reverse {
+  grid-template-columns: 1fr 260px;
+}
+
+.reverse .directorPhotoCol {
+  order: 2;
+}
+
+.reverse .directorContentCol {
+  order: 1;
+}
+
+/* ===== PHOTO COLUMN ===== */
+.directorPhotoCol {
+  position: relative;
+  min-height: 340px;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.directorPhotoCol img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.photoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(250, 249, 246, 0.3);
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.photoPlaceholderIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--accent-gold);
+  opacity: 0.5;
+}
+
+/* ===== CONTENT COLUMN ===== */
+.directorContentCol {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.directorIdentity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.directorTitleLabel {
+  font-size: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin: 0;
+}
+
+.directorName {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--secondary-offwhite);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Message block */
+.directorMessageWrap {
+  flex: 1;
+  position: relative;
+}
+
+.directorMessage {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: rgba(250, 249, 246, 0.72);
+  font-family: Georgia, serif;
+  font-style: italic;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.noMessage {
+  font-size: 14px;
+  color: rgba(250, 249, 246, 0.35);
+  font-family: Georgia, serif;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+  .directorCard,
+  .reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .directorPhotoCol {
+    min-height: 240px;
+  }
+
+  .reverse .directorPhotoCol {
+    order: 1;
+  }
+
+  .reverse .directorContentCol {
+    order: 2;
+  }
+
+  .directorContentCol {
+    padding: 24px 24px 28px;
+  }
+
+  .directorsList {
+    padding: 0 16px;
+    gap: 24px;
+  }
+}

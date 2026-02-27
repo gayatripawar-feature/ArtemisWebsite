@@ -1,23 +1,19 @@
-# Artemis Web - Multi-App Architecture
+# Artemis Web - Unified Monorepo Structure
 
-A scalable, professional multi-app architecture supporting multiple subdomains under one organization.
+## Overview
+This is a unified React application merging three separate projects:
+- **Main App** (src/main-app) - Primary website
+- **Consultancy** (src/consultancy) - Consultancy services website  
+- **NextGen** (src/nextgen) - NextGen offerings website
 
-## Architecture Overview
-
+## Routing Structure
 ```
-artemis-web/
-├── apps/
-│   ├── consultancy/     → consultancy.artemis.com (existing app)
-│   ├── main/            → artemis.com (future)
-│   └── nextgen/         → nextgen.artemis.com (future)
-├── shared/              → Optional shared utilities (future)
-└── README.md
+/                 → Main App
+/consultancy/*    → Consultancy App (with internal routing)
+/nextgen/*        → NextGen App (with internal routing)
 ```
 
-## Key Principles
-
-1. **Independent Deployments**: Each app builds and deploys independently with zero cross-app dependencies
-2. **Clean Separation**: Pages are never imported by other pages; components are reusable; utils are utilities
+## Getting Started
 3. **No Monorepo Overhead**: No yarn workspaces, no lerna, no build orchestration—each app is self-contained
 4. **Subdomain Ready**: Each app assumes it's the root of its document and uses `BrowserRouter` (no basename)
 5. **Apache Compatible**: Each app builds independently and can be deployed to any web server

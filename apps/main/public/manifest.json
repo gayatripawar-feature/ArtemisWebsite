@@ -1,9 +1,0 @@
-{
-  "short_name": "Artemis",
-  "name": "Artemis Main",
-  "icons": [],
-  "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#722F37",
-  "background_color": "#ffffff"
-}
