@@ -1,23 +1,20 @@
 
+
+/* ERP Section */
 .erpSection {
   padding: 80px 0 120px;
   background: var(--bg-primary);
   position: relative;
   overflow: hidden;
+  font-family: var(--font-family);
 }
 
 .erpSection::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 400px;
-  background: linear-gradient(
-    180deg,
-    var(--accent-gold-light) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg, var(--accent-gold-light) 0%, transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -30,48 +27,6 @@
   z-index: 1;
 }
 
-/* .sectionHeader {
-  text-align: center;
-  margin-bottom: 80px;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-
-
-.sectionTitle {
-  font-size: 48px;
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
-  margin: 0 0 16px 0;
-  line-height: 1.2;
-}
-
-.highlight {
-  color: var(--primary-maroon);
-  position: relative;
-  display: inline-block;
-}
-
-.highlight::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent-gold);
-  border-radius: 2px;
-  animation: expandWidth 0.8s ease-out 0.4s both;
-}
-
-.sectionSubtitle {
-  font-size: 18px;
-  color: var(--text-secondary);
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-} */
-
 .sectionHeader {
   text-align: center;
   margin-bottom: 80px;
@@ -80,7 +35,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .sectionTitle {
   font-size: 44px;
@@ -99,9 +53,7 @@
 .highlight::after {
   content: '';
   position: absolute;
-  bottom: 2px;
-  left: 0;
-  right: 0;
+  bottom: 2px; left: 0; right: 0;
   height: 3px;
   background: var(--primary-maroon);
   border-radius: 2px;
@@ -142,7 +94,6 @@
   font-weight: var(--font-weight-medium);
 }
 
-
 .modulesList {
   display: grid;
   gap: 48px;
@@ -161,6 +112,7 @@
   animation: fadeInUp 0.6s ease-out forwards;
   animation-delay: calc(var(--index) * 0.1s);
   border: 1px solid var(--color-border);
+  position: relative;
 }
 
 .moduleCard:nth-child(1) { --index: 0; }
@@ -184,6 +136,43 @@
   border-color: var(--accent-gold);
 }
 
+
+
+.comingSoonStamp {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(114, 47, 55, 0.92);
+  backdrop-filter: blur(8px);
+  color: var(--accent-gold);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent-gold);
+  font-family: var(--font-family);
+}
+
+.comingSoonDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Module Image */
 .moduleImageSection {
   position: relative;
   overflow: hidden;
@@ -204,41 +193,11 @@
 
 .imageOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(114, 47, 55, 0.7) 0%,
-    rgba(54, 69, 79, 0.85) 100%
-  );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 32px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(114, 47, 55, 0.7) 0%, rgba(54, 69, 79, 0.85) 100%);
 }
 
-.moduleNumber {
-  font-size: 72px;
-  font-weight: var(--font-weight-bold);
-  color: var(--accent-gold);
-  opacity: 0.9;
-  line-height: 1;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all var(--transition-base);
-}
-
-.moduleCard:hover .moduleNumber {
-  transform: scale(1.1);
-  opacity: 1;
-  text-shadow: var(--shadow-glow);
-}
-
-
-
+/* Module Content */
 .moduleContent {
   padding: 48px 40px;
   display: flex;
@@ -407,137 +366,7 @@
   transform: scale(1.1);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes expandWidth {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .moduleCard {
-    grid-template-columns: 1fr;
-  }
-
-  .moduleImageSection {
-    min-height: 300px;
-  }
-
-  .featuresList {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sectionTitle {
-    font-size: 40px;
-  }
-  .advantageTitle {
-    font-size: 40px;
-  }
-
-  .advantageGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .erpSection {
-    padding: 60px 0 80px;
-  }
-
-  .sectionHeader {
-    margin-bottom: 48px;
-  }
-
-  .sectionTitle {
-    font-size: 32px;
-  }
-
-  .sectionSubtitle {
-    font-size: 16px;
-  }
-
-  .modulesList {
-    gap: 32px;
-  }
-
-  .moduleContent {
-    padding: 32px 24px;
-    gap: 24px;
-  }
-
-  .moduleName {
-    font-size: 24px;
-  }
-
-  .moduleImageSection {
-    min-height: 250px;
-  }
-
-  .moduleNumber {
-    font-size: 56px;
-  }
-
-
-
-  .featuresList {
-    grid-template-columns: 1fr;
-  }
-   .advantageSection {
-    padding: 60px 0;
-    margin-top: 60px;
-  }
-
-  .advantageTitle {
-    font-size: 32px;
-  }
-
-  .advantageDescription {
-    font-size: 16px;
-  }
-
-  .advantageGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 48px;
-  }
-
-  .advantageItem {
-    padding: 20px;
-  }
-
-  .ctaBox {
-    padding: 32px 24px;
-  }
-
-  .ctaTitle {
-    font-size: 24px;
-    flex-direction: column;
-  }
-}
+/* Advantage Section */
 .advantageSection {
   background: var(--gradient-primary);
   padding: 100px 0;
@@ -549,11 +378,8 @@
 .advantageSection::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(212,175,55,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(212,175,55,0.1)" stroke-width="1"/></pattern></defs><rect width="100%25" height="100%25" fill="url(%23grid)"/></svg>');
   pointer-events: none;
 }
 
@@ -692,6 +518,7 @@
   transition: all var(--transition-smooth);
   box-shadow: var(--shadow-medium);
   text-decoration: none;
+  font-family: var(--font-family);
 }
 
 .ctaButton:hover {
@@ -707,4 +534,44 @@
 
 .ctaButton:hover .ctaArrowIcon {
   transform: translateX(4px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandWidth {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .featuresList { grid-template-columns: repeat(2, 1fr); }
+  .sectionTitle { font-size: 40px; }
+  .advantageTitle { font-size: 40px; }
+  .advantageGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .erpSection { padding: 60px 0 80px; }
+  .sectionHeader { margin-bottom: 48px; }
+  .sectionTitle { font-size: 32px; }
+  .sectionSubtitle { font-size: 16px; }
+  .modulesList { gap: 32px; }
+  .moduleContent { padding: 32px 24px; gap: 24px; }
+  .moduleName { font-size: 24px; }
+  .moduleImageSection { height: 250px; }
+  .featuresList { grid-template-columns: 1fr; }
+  .advantageSection { padding: 60px 0; margin-top: 60px; }
+  .advantageTitle { font-size: 32px; }
+  .advantageDescription { font-size: 16px; }
+  .advantageGrid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
+  .advantageItem { padding: 20px; }
+  .ctaBox { padding: 32px 24px; }
+  .ctaTitle { font-size: 24px; flex-direction: column; }
+
+  .comingSoonStamp { font-size: 10px; padding: 5px 10px; }
 }

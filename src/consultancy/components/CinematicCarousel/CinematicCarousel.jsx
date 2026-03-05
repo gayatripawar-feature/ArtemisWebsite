@@ -6,7 +6,6 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../assets/styles/variables.css";
 import styles from "./CinematicCarousel.module.css";
 import Hero1 from "../../assets/images/Hero1.png";
 import Hero2 from "../../assets/images/Hero2.png";

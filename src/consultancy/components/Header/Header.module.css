@@ -351,13 +351,7 @@
   background: rgba(114, 47, 55, 0.04);
 }
 
-.mobileNavNumber {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-light);
-  margin-right: 16px;
-  font-family: monospace;
-}
+
 
 .mobileNavText {
   flex: 1;

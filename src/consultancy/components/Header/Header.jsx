@@ -141,7 +141,6 @@ const Header = () => {
                       className={styles.mobileNavLink}
                       onClick={() => handleNavClick(item.path)}
                     >
-                      <span className={styles.mobileNavNumber}>0{index + 1}</span>
                       <span className={styles.mobileNavText}>{item.label}</span>
                       <svg className={styles.mobileNavArrow} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
