@@ -216,7 +216,7 @@
 
 @media (max-width: 768px) {
   .aboutSection {
-    padding: 60px 0;
+    padding: 60px 20px;
   }
   .aboutStats {
     grid-template-columns: repeat(3, 1fr);

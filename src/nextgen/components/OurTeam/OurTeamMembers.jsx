@@ -1,5 +1,5 @@
-import { teamMembers } from "./data/teamData";
 
+import { teamMembers } from "./data/teamData";
 import styles from "./OurTeamMembers.module.css";
 
 const OurTeamMembers = () => {
@@ -10,26 +10,19 @@ const OurTeamMembers = () => {
         <h2 id="team-heading" className={styles.teamTitle}>
           Our <span>Team</span>
         </h2>
+
       </header>
 
       <div className={styles.teamGrid}>
-        {teamMembers.map((member) => (
-          <article key={member.id} className={styles.teamCard}>
-            <div className={styles.teamPhotoWrap}>
-              {member.photo ? (
-                <img src={member.photo} alt={member.name} loading="lazy" />
-              ) : (
-                <div className={styles.photoFallback}>
-                  <div className={styles.photoFallbackIcon}>
-                    {member.name.charAt(0)}
-                  </div>
-                  {member.name.split(" ").slice(0, 2).join(" ")}
-                </div>
-              )}
-            </div>
-            <div className={styles.teamCardBody}>
-              <h3 className={styles.teamMemberName}>{member.name}</h3>
-              <p className={styles.teamMemberPosition}>{member.position}</p>
+        {teamMembers.map((member, index) => (
+          <article key={member.id} className={styles.teamItem}>
+            <h3 className={styles.teamMemberName}>{member.name}</h3>
+            <div className={styles.accentLine} />
+            <p className={styles.teamMemberPosition}>{member.position}</p>
+            <div className={styles.dotDecor}>
+              <span />
+              <span />
+              <span />
             </div>
           </article>
         ))}
@@ -39,3 +32,4 @@ const OurTeamMembers = () => {
 };
 
 export default OurTeamMembers;
+

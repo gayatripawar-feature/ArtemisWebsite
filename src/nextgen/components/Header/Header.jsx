@@ -1,5 +1,3 @@
-
-
 // import React, { useState, useEffect, useRef, useCallback } from "react";
 // import { createPortal } from "react-dom";
 // import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -863,6 +861,8 @@
 
 
 
+
+
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -996,12 +996,7 @@ const erpProducts = [
   { label: "Training & Implementation", hash: "training-implementation" },
 ];
 
-const slugify = (str) =>
-  str
-    .toLowerCase()
-    .replace(/\s|&/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
+
 
 // Helper function to check if a nav item is active
 const isPathActive = (pathname, targetPath) => {
@@ -1398,6 +1393,24 @@ const Header = () => {
                   <span className={styles.linkText}>Contact Us</span>
                 </Link>
               </li>
+                             <li
+                className={styles.navItem}
+                onMouseEnter={() => {
+                  if (dropdownTimeout.current)
+                    clearTimeout(dropdownTimeout.current);
+                  setOpenDropdown(null);
+                }}
+              >
+                <Link
+                  to="careers"
+                  // className={`${styles.navLink} ${location.pathname === "/nextgen/careers" ? styles.active : ""}`}
+                  className={`${styles.navLink} ${isPathActive(location.pathname, "/nextgen/careers") ? styles.active : ""}`}
+
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className={styles.linkText}>Careers</span>
+                </Link>
+              </li>
 
               <li
                 className={styles.navItem}
@@ -1414,7 +1427,6 @@ const Header = () => {
                 >
                   <span className={styles.linkText}>About Us</span>
                 </Link>
-
               </li>
               <li
                 className={styles.navItem}
@@ -1432,8 +1444,6 @@ const Header = () => {
                   <span className={styles.linkText}>Our Team</span>
                 </Link>
               </li>
-
-
             </ul>
           </nav>
 
@@ -1672,6 +1682,15 @@ const Header = () => {
                       onClick={closeAll}
                     >
                       Contact Us
+                    </Link>
+                  </li>
+                    <li className={styles.mobileNavItem}>
+                     <Link
+                      to="careers"
+                      className={`${styles.mobileNavLink} ${isPathActive(location.pathname, "/nextgen/careers") ? styles.active : ""}`}
+                      onClick={closeAll}
+                    >
+                      Careers
                     </Link>
                   </li>
                   <li className={styles.mobileNavItem}>
