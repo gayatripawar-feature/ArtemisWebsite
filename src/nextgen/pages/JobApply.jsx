@@ -12,7 +12,7 @@ const jobsData = {
     experience: '3+ Years',
     education: 'Any Graduate',
     tags: ['#ReactJS', '#React Developer', '#Frontend Developer', '#JavaScript'],
-    perks: 'Flexible working hours, Medical insurance, Lucrative package',
+    perks: 'Flexible working hours ',
     description: 'Join Our Innovative Team to Build Scalable, High-Performance Web Applications with React.',
     responsibilities: [
       'Design, develop, test, and maintain scalable web applications using React.js, Redux, Next.js, Tailwind CSS, Webpack, Hooks, Context API, Axios.',
@@ -98,7 +98,7 @@ const jobsData = {
     ],
   },
   '6': {
-    title: 'Data Scientist',
+    title: 'Data Analyst',
     dept: 'Data',
     location: 'Pune',
     type: 'Full-time',

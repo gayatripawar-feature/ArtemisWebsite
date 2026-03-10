@@ -6,7 +6,6 @@ import './assets/styles/variables.css';
 import './assets/styles/index.css';
 import './assets/styles/global.css';
 import './assets/styles/animations.css';
-
 function App() {
   return (
     <AppLayout>
@@ -19,6 +18,7 @@ function App() {
           />
         ))}
       </Routes>
+
     </AppLayout>
   );
 }

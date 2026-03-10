@@ -32,7 +32,7 @@ export const directors = [
   },
   {
     id: 4,
-    name: " Ms. Priyanka Patil",
+    name: "Ms. Shubhangi Salunke",
     title: "Director",
 
     photo: "",
@@ -41,11 +41,12 @@ export const directors = [
   },
   {
     id: 5,
-    name: "Ms. Shubhangi Salunke",
+    name: " Ms. Priyanka Patil",
     title: "Director",
 
     photo: "",
     message: "",
 
   },
+
 ];

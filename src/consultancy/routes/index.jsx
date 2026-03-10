@@ -1,10 +1,4 @@
-/**
- * Central route configuration for Artemis Consultancy app
- * Defines all application routes using React Router
- *
- * This file exports route definitions (path + component).
- * Route element rendering happens in App.js with <Route> from react-router-dom
- */
+
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Services from '../pages/Services';

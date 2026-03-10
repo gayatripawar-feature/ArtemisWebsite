@@ -19,7 +19,6 @@ import serviceMaintenance from "../assets/images/ServicePage/service-maintenance
 const servicesData = [
   {
     id: "custom-software-development",
-    number: "01",
     title: "Custom Software Development",
     description:
       "We build tailor-made software solutions aligned with your business workflows — secure, scalable, and built for the long term.",
@@ -36,7 +35,6 @@ const servicesData = [
   },
   {
     id: "erp-enterprise-solutions",
-    number: "02",
     title: "ERP & Enterprise Solutions",
     description:
       "We design ERP systems that integrate departments, data, and decisions into one unified platform.",
@@ -54,7 +52,6 @@ const servicesData = [
   },
   {
     id: "website-design-development",
-    number: "03",
     title: "Website Design & Development",
     description:
       "We create modern, high-performance websites that represent your brand and convert visitors into customers.",
@@ -85,7 +82,6 @@ const servicesData = [
   },
   {
     id: "web-application-development",
-    number: "04",
     title: "Web Application Development",
     description:
       "We develop secure, cloud-ready web applications using modern frameworks and cutting-edge technology.",
@@ -114,7 +110,6 @@ const servicesData = [
   },
   {
     id: "mobile-app-development",
-    number: "05",
     title: "Mobile App Development",
     description:
       "We build reliable mobile apps for businesses and enterprise users with seamless cross-platform experiences.",
@@ -131,7 +126,6 @@ const servicesData = [
   },
   {
     id: "product-engineering-mvp",
-    number: "06",
     title: "Product Engineering & MVP Development",
     description:
       "Turn your idea into a scalable product with our strategic approach to building MVPs and beyond.",
@@ -148,7 +142,6 @@ const servicesData = [
   },
   {
     id: "ui-ux-design",
-    number: "07",
     title: "UI / UX Design Services",
     description:
       "We design interfaces that users actually enjoy using — intuitive, beautiful, and purpose-driven.",
@@ -165,7 +158,6 @@ const servicesData = [
   },
   {
     id: "cloud-devops",
-    number: "08",
     title: "Cloud Solutions & DevOps",
     description:
       "We help businesses move to the cloud with confidence — secure, scalable, and always available.",
@@ -183,7 +175,6 @@ const servicesData = [
   },
   {
     id: "quality-assurance-testing",
-    number: "09",
     title: "Quality Assurance & Testing",
     description:
       "We ensure your software works flawlessly — every feature tested, every edge case covered.",
@@ -199,7 +190,6 @@ const servicesData = [
   },
   {
     id: "maintenance-support",
-    number: "10",
     title: "Maintenance & Support",
     description:
       "We provide long-term support to keep your systems updated, optimized, and running at peak performance.",
@@ -330,11 +320,7 @@ const Services = () => {
                   isVisible ? styles.visible : ""
                 }`}
               >
-                <div className={styles.serviceHeader}>
-                  <span className={styles.serviceNumber}>{service.number}</span>
-                  {/* <span className={styles.serviceIcon}>{service.icon}</span> */}
-                </div>
-                <div className={styles.serviceDivider} />
+
                 <h2 className={styles.serviceTitle}>{service.title}</h2>
                 <p className={styles.serviceDescription}>
                   {service.description}

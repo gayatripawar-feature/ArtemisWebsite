@@ -8,6 +8,7 @@ import './assets/styles/variables.css';
 import './assets/styles/index.css';
 import './assets/styles/global.css';
 import './assets/styles/animations.css';
+import ConnectWidget from './components/ConnectWidget/ConnectWidget.jsx';
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
             />
           ))}
         </Routes>
+              <ConnectWidget />
+
       </main>
       <Footer />
     </>

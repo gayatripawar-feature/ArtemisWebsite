@@ -1,11 +1,8 @@
-/**
- * AppLayout Component
- * Wraps the entire application with Header and Footer
- * This layout component ensures consistent structure across all pages
- */
+
 import React from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import ConnectWidget from '../components/ConnectWidget/ConnectWidget';
 
 const AppLayout = ({ children }) => {
   return (
@@ -15,6 +12,7 @@ const AppLayout = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <ConnectWidget />
     </div>
   );
 };

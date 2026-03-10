@@ -179,6 +179,8 @@ const industryItems = [
 ];
 
 const erpProducts = [
+  { label: "Sales Module", hash: "sales-module" },
+  { label: "CRM Module", hash: "crm-module" },
   { label: "New Company Creation", hash: "new-company" },
   { label: "Land Dealing", hash: "land-dealing" },
   { label: "Product Development", hash: "product-development" },
@@ -190,8 +192,6 @@ const erpProducts = [
   { label: "Inventory Management Module", hash: "inventory-management-module" },
   { label: "Purchase Department Module", hash: "purchase-department-module" },
   { label: "Site Management Module", hash: "site-management-module" },
-  { label: "Sales Module", hash: "sales-module" },
-  { label: "CRM Module", hash: "crm-module" },
   { label: "Training & Implementation", hash: "training-implementation" },
 ];
 

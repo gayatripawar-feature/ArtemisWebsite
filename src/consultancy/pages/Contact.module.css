@@ -304,13 +304,13 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--accent-gold-light);
+  background: var(--accent-gold);
   transition: width 0.3s ease;
 }
 
-.emailLink:hover {
-  color: var(--accent-gold-light);
-}
+/* .emailLink:hover {
+  color: var(--accent-gold);
+} */
 
 .emailLink:hover::after {
   width: 100%;

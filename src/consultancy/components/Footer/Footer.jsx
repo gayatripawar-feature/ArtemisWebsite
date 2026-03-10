@@ -69,9 +69,9 @@ const Footer = () => {
       href: "https://www.linkedin.com/company/artemis-infratech-consultancy/",
       color: "#0A66C2",
     },
-    { icon: <FaInstagram />, label: "Instagram", href: "#", color: "#E4405F" },
-    { icon: <FaTwitter />, label: "Twitter", href: "#", color: "#1DA1F2" },
-    { icon: <FaFacebook />, label: "Facebook", href: "#", color: "#1877F2" },
+    { icon: <FaInstagram />, label: "Instagram", href: "", color: "#E4405F" },
+    { icon: <FaTwitter />, label: "Twitter", href: "", color: "#1DA1F2" },
+    { icon: <FaFacebook />, label: "Facebook", href: "", color: "#1877F2" },
   ];
 
   const workingHours = [
@@ -122,7 +122,7 @@ const Footer = () => {
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
-                  href={social.href}
+                  // href={social.href}
                   className={styles.socialLink}
                   aria-label={social.label}
                   style={{ "--social-color": social.color }}
@@ -259,14 +259,14 @@ const Footer = () => {
       </div>
 
       {/* Back to Top Button */}
-      <button
+      {/* <button
         className={`${styles.backToTop} ${showBackToTop ? styles.backToTopVisible : ""}`}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
       >
         <FaArrowUp className={styles.arrowUp} />
         <span className={styles.backToTopRing}></span>
-      </button>
+      </button> */}
     </footer>
   );
 };

@@ -272,7 +272,7 @@ export default function Contact() {
                     <div className={styles.socialLinks}>
                       <button
                         className={styles.socialButton}
-                        onClick={handleWhatsAppClick}
+                        // onClick={handleWhatsAppClick}
                         aria-label="Contact us on WhatsApp"
                       >
                         <FaWhatsapp className={styles.socialIcon} />
@@ -289,7 +289,7 @@ export default function Contact() {
                         <span className={styles.socialText}>LinkedIn</span>
                       </a>
                       <a
-                        href=" "
+                        // href=" "
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.socialButton}

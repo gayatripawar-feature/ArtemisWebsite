@@ -109,7 +109,7 @@ const Footer = () => {
             {socialLinks.map((social) => (
               <a
                 key={social.name}
-                href={social.url}
+                // href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
