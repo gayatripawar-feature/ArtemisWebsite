@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./OurMission.module.css";
-import Mission1 from "../../assets/images/OurMission/OurMission1.png";
-import Mission2 from "../../assets/images/OurMission/OurMission2.png";
+import Mission1 from "../../assets/images/OurMission/OurMission1.jpg";
+import Mission2 from "../../assets/images/OurMission/OurMission2.jpg";
 
 const OurMission = () => {
   const sectionRef = useRef(null);

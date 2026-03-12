@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./KeyOutcomes.module.css";
-import KeyOutcome1 from "../../assets/images/KeyOutcomes/Key_Outcome1.jpg";
+import CostSaving from "../../assets/images/KeyOutcomes/outcome-cost-savings.jpg";
+import TimeDelivery from "../../assets/images/KeyOutcomes/outcome-time-delivery.jpg";
+import SingleAccountability from "../../assets/images/KeyOutcomes/outcome-accountability.jpg";
+import DigitalVisibilty from "../../assets/images/KeyOutcomes/outcome-digital-visibility.jpg";
+
+
+
 
 const CostSavingsIcon = () => (
   <svg
@@ -71,7 +77,7 @@ const outcomes = [
       "Strategic cost optimization through value engineering and smart procurement.",
     icon: CostSavingsIcon,
     stat: "18%",
-    image: KeyOutcome1,
+    image: CostSaving,
   },
   {
     id: 2,
@@ -80,8 +86,7 @@ const outcomes = [
       "Accelerated timelines with efficient project management methodologies.",
     icon: TimeDeliveryIcon,
     stat: "On-Time",
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80",
+    image: TimeDelivery,
   },
   {
     id: 3,
@@ -90,8 +95,7 @@ const outcomes = [
       "One dedicated team responsible for your entire project lifecycle.",
     icon: AccountabilityIcon,
     stat: "100%",
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80",
+    image: SingleAccountability,
   },
   {
     id: 4,
@@ -100,8 +104,7 @@ const outcomes = [
       "Live dashboards and reports for complete transparency and control.",
     icon: DigitalVisibilityIcon,
     stat: "24/7",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
+    image:DigitalVisibilty,
   },
 ];
 

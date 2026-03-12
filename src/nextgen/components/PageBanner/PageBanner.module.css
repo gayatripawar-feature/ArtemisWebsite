@@ -74,7 +74,7 @@
 }
 
 /* Glow line at bottom */
-.glowLine {
+/* .glowLine {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -91,7 +91,7 @@
   opacity: 0.5;
   z-index: 3;
   box-shadow: 0 0 20px var(--accent-gold-glow), 0 0 40px var(--accent-gold-glow);
-}
+} */
 
 /* Content */
 .bannerContent {

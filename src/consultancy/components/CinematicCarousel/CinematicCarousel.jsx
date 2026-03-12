@@ -1,15 +1,10 @@
 
-
-
-
-
-
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./CinematicCarousel.module.css";
-import Hero1 from "../../assets/images/Hero1.png";
-import Hero2 from "../../assets/images/Hero2.png";
-import Hero3 from "../../assets/images/Hero3.png";
+import Hero1 from "../../assets/images/Hero1.jpg";
+import Hero2 from "../../assets/images/Hero2.jpg";
+import Hero3 from "../../assets/images/Hero3.jpg";
 import Hero4 from "../../assets/images/Hero4.jpg";
 
 const AUTOPLAY_INTERVAL = 6000;

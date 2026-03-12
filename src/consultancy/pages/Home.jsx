@@ -3,8 +3,9 @@ import CinematicCarousel from "../components/CinematicCarousel";
 import StatsCounter from "../components/StatsCounter";
 import { useNavigate } from "react-router-dom";
 import SectionDivider from "../components/SectionDivider/SectionDivider";
-import Vision1 from "../assets/images/OurVision/Vision1.png";
 import Vision2 from "../assets/images/OurVision/Vision2.png";
+import Vision1 from "../assets/images/OurVision/Vision1.jpg";
+
 import OurMission from "../components/HomeSections";
 import { KeyOutcomes, WhoWeAre } from "../components/HomeSections";
 import WhatWeDo1 from "../assets/images/WhatWeDo/WhatWeDo1.jpg";
