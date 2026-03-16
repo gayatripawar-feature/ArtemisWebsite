@@ -3,11 +3,11 @@ name: Azure Static Web Apps CI/CD
 pr:
   branches:
     include:
-      - release/16Mar2026
+      - master
 trigger:
   branches:
     include:
-      - release/16Mar2026
+      - master
 
 jobs:
 - job: build_and_deploy_job
