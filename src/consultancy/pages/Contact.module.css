@@ -308,9 +308,7 @@
   transition: width 0.3s ease;
 }
 
-/* .emailLink:hover {
-  color: var(--accent-gold);
-} */
+
 
 .emailLink:hover::after {
   width: 100%;

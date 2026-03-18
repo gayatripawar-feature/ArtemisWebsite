@@ -102,53 +102,63 @@ export default function Contact() {
     if (type !== "checkbox") validateField(name, newValue);
   };
 
+  
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const fields = [
-      "name",
-      "company",
-      "projectType",
-      "city",
-      "requirement",
-      "message",
-    ];
-    let hasErrors = false;
-    fields.forEach((f) => {
-      if (!validateField(f, formData[f])) hasErrors = true;
+  e.preventDefault();
+
+  const fields = [
+    "name",
+    "company",
+    "projectType",
+    "city",
+    "requirement",
+    "message",
+  ];
+
+  let hasErrors = false;
+  fields.forEach((f) => {
+    if (!validateField(f, formData[f])) hasErrors = true;
+  });
+
+  if (Object.keys(formErrors).length > 0 || hasErrors) {
+    setSubmitStatus("error");
+    setTimeout(() => setSubmitStatus(null), 3000);
+    return;
+  }
+
+  setIsSubmitting(true);
+  setSubmitStatus(null);
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbxu1J2uwcANdI3CIprdUqPT1aR_LJ3dFzae7SpRewzpVePcET-HHpeFJR6KRA856cBQ/exec", {
+      method: "POST",
+      mode: "no-cors", 
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
 
-    if (Object.keys(formErrors).length > 0 || hasErrors) {
-      setSubmitStatus("error");
-      setTimeout(() => setSubmitStatus(null), 3000);
-      return;
-    }
+    setSubmitStatus("success");
 
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+    setFormData({
+      name: "",
+      company: "",
+      projectType: "",
+      city: "",
+      requirement: "",
+      message: "",
+    });
 
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      if (Math.random() > 0.1) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          company: "",
-          projectType: "",
-          city: "",
-          requirement: "",
-          message: "",
-        });
-        setFormErrors({});
-      } else {
-        throw new Error("Submission failed");
-      }
-    } catch {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }
-  };
+    setFormErrors({});
+  } catch (error) {
+    console.error(error);
+    setSubmitStatus("error");
+  } finally {
+    setIsSubmitting(false);
+    setTimeout(() => setSubmitStatus(null), 5000);
+  }
+};
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
@@ -371,10 +381,8 @@ export default function Contact() {
                             required
                           >
                             <option value="">Project Type</option>
-                            <option value="residential">Project 1</option>
-                            <option value="commercial">Project 2</option>
-                            <option value="industrial">Project 3</option>
-                            <option value="infrastructure">Project 4</option>
+                            <option value="ongoing">Ongoing Projects</option>
+                            <option value="upcoming">Upcoming Projects</option>
                             <option value="other">Other</option>
                           </select>
                         </div>

@@ -18,19 +18,8 @@ const ongoingProjects = [
     configuration: "1, 2, 3 BHK Homes, Commercial Shops & Office Spaces",
     location: "Chovisawadi, Charholi, PCMC",
   },
-
   {
     id: 2,
-    image: MatoshriAradhyam1,
-    buildingName: "Matoshri Aradhyam",
-    projectBy: "Matoshri Properties",
-    totalLandArea: "0.5 Acres",
-    families: "90",
-    configuration: "1, 2 BHK Homes + Commercial",
-    location: "Kaljewadi",
-  },
-  {
-    id: 3,
     image: ShubhElara1,
     buildingName: "Shubh Elara",
     projectBy: "Shubh Matoshri Associates LLP",
@@ -39,26 +28,7 @@ const ongoingProjects = [
     configuration: "1, 2 BHK Homes + Commercial",
     location: "Wadmukhwadi",
   },
-  {
-    id: 4,
-    image: StellaRegency1,
-    buildingName: "Stella Regency",
-    projectBy: "PrathamYash Buildcon",
-    totalLandArea: "0.5 Acre",
-    families: "25",
-    configuration: "1, 2 BHK Homes and Commercial Shops",
-    location: "Charholi BK., PCMC",
-  },
-  {
-    id: 5,
-    image: MatoshriBhumi1,
-    buildingName: "Matoshri Bhumi",
-    projectBy: "-",
-    totalLandArea: "1.62 Acres",
-    families: "113",
-    configuration: "1BHK, 2 BHK and Commercial Shops",
-    location: "Wadmukhwadi",
-  },
+
 ];
 
 export default ongoingProjects;

@@ -103,7 +103,7 @@ const Home = () => {
                   </svg>
                 </div>
 
-                <h3 className={styles.premiumCardTitle}>Artemis Consultancy</h3>
+                <h3 className={styles.premiumCardTitle}>Artemis Infratech Consultancy</h3>
               </div>
 
               <button

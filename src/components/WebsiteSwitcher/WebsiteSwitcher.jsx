@@ -24,16 +24,16 @@ export default function WebsiteSwitcher() {
       label: 'main',
       path: '/',
     },
-    {
-      id: 'consultancy',
-      label: 'consultancy',
-      path: '/consultancy',
-    },
-    {
-      id: 'nextgen',
-      label: 'nextgen',
-      path: '/nextgen',
-    },
+    // {
+    //   id: 'consultancy',
+    //   label: 'consultancy',
+    //   path: '/consultancy',
+    // },
+    // {
+    //   id: 'nextgen',
+    //   label: 'nextgen',
+    //   path: '/nextgen',
+    // },
   ];
 
   const handleSwitch = (path) => {

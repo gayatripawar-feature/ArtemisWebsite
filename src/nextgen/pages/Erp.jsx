@@ -463,7 +463,7 @@ const Erp = () => {
                 real estate business from one system.
               </p>
               <button
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/nextgen/contact")}
                 className={styles.ctaButton}
               >
                 Contact us today for a live product demo
