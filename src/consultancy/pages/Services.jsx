@@ -3,7 +3,7 @@
 
 
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
 import styles from './Services.module.css';
@@ -34,6 +34,12 @@ import FastTrack2 from "../assets/images/ServicePage/FastTrack2.jpg";
 
 const Services = () => {
   const navigate = useNavigate();
+
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const breadcrumbs = [
     { label: 'Home' },
     { label: 'Services' }

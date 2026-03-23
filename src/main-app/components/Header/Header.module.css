@@ -38,15 +38,65 @@
   display: block;
 }
 
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 22px;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-white);
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  white-space: nowrap;
+}
 
+.ctaPrimary:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-1px);
+}
+
+.ctaPrimary:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .ctaPrimary {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}
 
 @media (max-width: 720px) {
   .inner { padding: 12px 20px; }
   .logoText { font-size: 18px; }
+  .ctaPrimary {
+    padding: 7px 16px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .ctaPrimary svg {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 @media (max-width: 480px) {
   .inner { padding: 10px 12px; }
   .logoText { font-size: 16px; }
   .logoImg { width: 32px; }
+  .ctaPrimary {
+    padding: 6px 12px;
+    font-size: 11px;
+    gap: 4px;
+  }
+  .ctaPrimary svg {
+    width: 10px;
+    height: 10px;
+  }
 }

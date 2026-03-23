@@ -61,19 +61,19 @@ const Home = () => {
         aria-labelledby="platform-heading"
       >
         <div className={styles.ctaWrapper}>
-          <div className={styles.ctaContent}>
-            <h2 id="platform-heading" className={styles.ctaHeading}>
-              Choose Your Path Forward
-            </h2>
-            <p className={styles.ctaIntro}>
-              Explore our integrated platforms designed for enterprise transformation
-            </p>
-          </div>
+
 
           {/* DUAL CTA CARDS */}
           <div className={styles.cardGrid}>
             {/* CONSULTANCY CARD */}
-            <article className={styles.premiumCard}>
+            <article
+              className={styles.premiumCard}
+              onClick={() => navigate('/consultancy')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && navigate('/consultancy')}
+              aria-label="Access Artemis Consultancy Services"
+            >
               <div className={styles.cardGlow}></div>
 
               <div className={styles.cardTop}>
@@ -106,18 +106,21 @@ const Home = () => {
                 <h3 className={styles.premiumCardTitle}>Artemis Infratech Consultancy</h3>
               </div>
 
-              <button
-                onClick={() => navigate('/consultancy')}
-                className={styles.premiumCTA}
-                aria-label="Access Artemis Consultancy Services"
-              >
+              <div className={styles.premiumCTA}>
                 <span>Explore Consultancy</span>
                 <span className={styles.ctaArrow} aria-hidden="true">→</span>
-              </button>
+              </div>
             </article>
 
             {/* NEXTGEN CARD */}
-            <article className={styles.premiumCard}>
+            <article
+              className={styles.premiumCard}
+              onClick={() => navigate('/nextgen')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && navigate('/nextgen')}
+              aria-label="Access Artemis NextGen Solutions"
+            >
               <div className={styles.cardGlow}></div>
 
               <div className={styles.cardTop}>
@@ -139,14 +142,10 @@ const Home = () => {
                 <h3 className={styles.premiumCardTitle}>Artemis NextGen</h3>
               </div>
 
-              <button
-                onClick={() => navigate('/nextgen')}
-                className={styles.premiumCTA}
-                aria-label="Access Artemis NextGen Solutions"
-              >
+              <div className={styles.premiumCTA}>
                 <span>Explore Nextgen</span>
                 <span className={styles.ctaArrow} aria-hidden="true">→</span>
-              </button>
+              </div>
             </article>
           </div>
         </div>

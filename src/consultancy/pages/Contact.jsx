@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from "react";
 import styles from "./Contact.module.css";
 import {
@@ -31,7 +30,21 @@ export default function Contact() {
   }, [contactVisible]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+
+    const hash = window.location.hash;
+    if (hash) {
+
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const yOffset = -150;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const [formData, setFormData] = useState({
@@ -90,7 +103,6 @@ export default function Contact() {
       default:
         break;
     }
-
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -102,7 +114,6 @@ export default function Contact() {
     if (type !== "checkbox") validateField(name, newValue);
   };
 
-  
   const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -132,7 +143,7 @@ export default function Contact() {
   try {
     await fetch("https://script.google.com/macros/s/AKfycbxu1J2uwcANdI3CIprdUqPT1aR_LJ3dFzae7SpRewzpVePcET-HHpeFJR6KRA856cBQ/exec", {
       method: "POST",
-      mode: "no-cors", 
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -314,7 +325,7 @@ export default function Contact() {
               </div>
 
               {/* Right Form */}
-              <div className={styles.formCard}>
+              <div className={styles.formCard} id="contact-form">
                 <div className={styles.formContent}>
                   <div className={styles.formHeader}>
                     <h2 className={styles.formTitle}>Let's Connect With Us</h2>

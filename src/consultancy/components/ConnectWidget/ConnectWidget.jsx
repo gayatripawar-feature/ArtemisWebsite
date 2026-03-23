@@ -104,7 +104,10 @@ const ConnectWidget = () => {
               <button
                 type="button"
                 className={styles.action}
-                onClick={() => navigate("/consultancy/contact")}
+                onClick={() => {
+                  setIsOpen(false);
+                  navigate("/consultancy/contact#contact-form");
+                }}
                 aria-label="Book a free demo"
               >
                 <span className={`${styles.actionIcon} ${styles.actionIconPurple}`}>

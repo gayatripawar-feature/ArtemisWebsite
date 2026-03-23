@@ -138,7 +138,21 @@ const Contact = () => {
     }
   };
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Check if there's a hash to scroll to
+    const hash = window.location.hash;
+    if (hash) {
+      // Wait for render, then scroll with offset
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const yOffset = -150; // Offset to account for PageBanner
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
@@ -220,7 +234,7 @@ const Contact = () => {
           </div>
 
           {/* Right: Contact Form */}
-          <div className={styles.rightCol}>
+          <div className={styles.rightCol} id="contact-form">
             <div className={styles.formCard}>
               {/* Card background effects */}
               <div className={styles.formCardGlow} />

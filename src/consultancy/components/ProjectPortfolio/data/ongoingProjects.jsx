@@ -1,9 +1,7 @@
 
 import PrathamVrindavan1 from "../../../assets/images/ProjectBanner/PrathamVrindavan1.jpg";
-import MatoshriAradhyam1 from "../../../assets/images/ProjectBanner/MatoshriAradhyam1.jpg";
 import ShubhElara1 from "../../../assets/images/ProjectBanner/ShubhElara1.jpg";
-import StellaRegency1 from "../../../assets/images/ProjectBanner/StellaRegency1.jpg";
-import MatoshriBhumi1 from "../../../assets/images/ProjectBanner/MatoshriBhumi1.jpg";
+
 
 
 
@@ -27,6 +25,16 @@ const ongoingProjects = [
     families: "200",
     configuration: "1, 2 BHK Homes + Commercial",
     location: "Wadmukhwadi",
+  },
+  {
+    id: 3,
+    image: "",
+    buildingName: "Shubh Anugrah",
+    projectBy: "-",
+    totalLandArea: "-",
+    families: "-",
+    configuration: "-",
+    location: "Alandi",
   },
 
 ];
