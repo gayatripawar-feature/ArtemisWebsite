@@ -40,10 +40,6 @@ const Services = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const breadcrumbs = [
-    { label: 'Home' },
-    { label: 'Services' }
-  ];
 
   const services = [
     {
@@ -133,7 +129,6 @@ const Services = () => {
     <div className={styles.servicesPage}>
 		 <PageBanner
         title="Our Services"
-        breadcrumbs={breadcrumbs}
         bgImage={ServiceBanner}
       />
 

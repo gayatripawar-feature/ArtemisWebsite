@@ -63,16 +63,12 @@ export default function WhyArtemis() {
     window.scrollTo(0, 0);
   }, []);
 
-  const breadcrumbs = [
-    { label: 'Home' },
-    { label: 'Why Artemis' },
-  ];
+
 
   return (
     <div className={styles.page}>
       <PageBanner
         title="Why Choose Artemis Consultancy?"
-        breadcrumbs={breadcrumbs}
         bgImage={WhyArtemisBanner}
       />
 

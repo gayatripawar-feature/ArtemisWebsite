@@ -29,12 +29,16 @@ const ongoingProjects = [
   {
     id: 3,
     image: "",
-    buildingName: "Shubh Anugrah",
-    projectBy: "-",
-    totalLandArea: "-",
-    families: "-",
-    configuration: "-",
-    location: "Alandi",
+    buildingName: "Shubh Anugraha",
+    projectBy: "Bramhand Reality",
+    totalLandArea: "4200 Sq.m (1.04 Acres)",
+    totalFlats: [
+      { label: "Commercial", value: "30 Shops" },
+      { label: "Flat (A Wing)", value: "95 Nos" },
+      { label: "Flat (B Wing)", value: "71 Nos" },
+    ],
+    configuration: "1 & 2 BHK Homes",
+    location: "Charholi Kh.",
   },
 
 ];

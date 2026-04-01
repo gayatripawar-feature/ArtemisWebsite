@@ -60,7 +60,6 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  const breadcrumbs = [{ label: "Home" }, { label: "Contact" }];
 
   const validateField = (name, value) => {
     const errors = { ...formErrors };
@@ -182,7 +181,6 @@ export default function Contact() {
     <div className={styles.page}>
       <PageBanner
         title="Contact Us"
-        breadcrumbs={breadcrumbs}
         bgImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=400&fit=crop&crop=center"
       />
 

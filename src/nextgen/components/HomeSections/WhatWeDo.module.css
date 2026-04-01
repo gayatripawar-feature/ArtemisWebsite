@@ -5,24 +5,20 @@
   background: var(--bg-primary);
 }
 
-/* .container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-} */
 
 .whatWeDoSection {
   text-align: center;
 }
 
 .sectionLabel {
-  display: inline-block;
+  display: block;
   font-size: 0.85rem;
   font-weight: var(--font-weight-semibold);
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--accent-gold);
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .sectionTitle {

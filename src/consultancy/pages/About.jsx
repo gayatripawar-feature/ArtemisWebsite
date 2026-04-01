@@ -21,7 +21,7 @@ export default function About() {
 		<div className={styles.page}>
 			<PageBanner
 				title="About Us"
-				breadcrumbs={breadcrumbs}
+				// breadcrumbs={breadcrumbs}
 				bgImage="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=400&fit=crop&crop=center"
 			/>
 			<section className={styles.section}>

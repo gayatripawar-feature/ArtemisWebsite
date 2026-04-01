@@ -88,15 +88,7 @@
   }
 }
 
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-  opacity: 0.95;
-  margin-top: 1rem;
-  animation: fadeInUp 0.6s ease-out 0.3s backwards;
-}
+
 
 @keyframes fadeInUp {
   from {
@@ -109,25 +101,6 @@
   }
 }
 
-.breadcrumbItem {
-  color: var(--text-white);
-  text-decoration: none;
-  transition: var(--transition-normal);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-}
-
-.breadcrumbItem:hover {
-  color: var(--accent-gold);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.breadcrumbSeparator {
-  margin: 0 0.75rem;
-  color: var(--accent-gold);
-  opacity: 0.8;
-  font-weight: 300;
-}
 
 .decorative {
   position: relative;
@@ -257,9 +230,6 @@
     }
   }
 
-  .breadcrumb {
-    justify-content: center;
-  }
 
   .decorative {
     display: none;

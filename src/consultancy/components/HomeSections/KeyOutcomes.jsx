@@ -166,21 +166,11 @@ const KeyOutcomes = () => {
                 </div>
 
                 <div className={styles.cardContent}>
-                  <div className={styles.cardNumber}>0{outcome.id}</div>
                   <h3 className={styles.cardTitle}>{outcome.title}</h3>
                   <p className={styles.cardDescription}>
                     {outcome.description}
                   </p>
 
-                  {/* <div className={styles.cardFooter}>
-                    <span className={styles.learnMore}>
-                      Learn More <ArrowRightIcon />
-                    </span>
-                    <span className={styles.statsBadge}>
-                      <StarIcon />
-                      {outcome.stat}
-                    </span>
-                  </div> */}
                 </div>
               </div>
             );

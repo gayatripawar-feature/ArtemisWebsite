@@ -13,7 +13,6 @@ const slides = [
     bgImage: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1600',
     title: 'Our Ongoing',
     titleAccent: 'Projects',
-    breadcrumbs: ['Home', 'Our Projects'],
     ctaLabel: 'View Ongoing',
   },
   {
@@ -21,7 +20,6 @@ const slides = [
     bgImage: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600',
     title: 'Our Upcoming',
     titleAccent: 'Projects',
-    breadcrumbs: ['Home', 'Our Projects'],
     ctaLabel: 'View Projects',
   },
 
@@ -149,19 +147,6 @@ const BannerSlider = () => {
       {/* Main Content */}
       <div className={styles.bannerContent} key={currentIndex}>
 
-
-
-        {/* Breadcrumb */}
-        <nav className={styles.bannerBreadcrumb}>
-          {slide.breadcrumbs.map((crumb, idx) => (
-            <React.Fragment key={idx}>
-              {idx > 0 && <span className={styles.breadcrumbSep}>&#47;</span>}
-              <span className={`${styles.breadcrumbItem} ${idx === slide.breadcrumbs.length - 1 ? styles.active : ''}`}>
-                {crumb}
-              </span>
-            </React.Fragment>
-          ))}
-        </nav>
 
         {/* Title Split */}
         <h1 className={styles.bannerTitle}>

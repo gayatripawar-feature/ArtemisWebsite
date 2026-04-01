@@ -124,15 +124,6 @@ const CinematicCarousel = () => {
 
         {/* Content */}
         <div className={styles.contentOverlay} key={`content-${currentSlide}`}>
-          <div className={styles.slideCounter}>
-            <span className={styles.counterCurrent}>
-              {String(currentSlide + 1).padStart(2, "0")}
-            </span>
-            <span className={styles.counterDivider}>/</span>
-            <span className={styles.counterTotal}>
-              {String(images.length).padStart(2, "0")}
-            </span>
-          </div>
           <h1 className={styles.slideTitle}>{images[currentSlide].title}</h1>
           <p className={styles.slideSubtitle}>
             {images[currentSlide].subtitle}

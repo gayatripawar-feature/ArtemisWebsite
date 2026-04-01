@@ -505,7 +505,6 @@
 
 .detailRow {
   display: flex;
-  align-items: center;
   gap: 8px;
   font-size: 13.5px;
   line-height: 1.5;
@@ -552,4 +551,51 @@
   color: var(--text-secondary);
   flex: 1;
 }
+
+/* Total Flats */
+
+.totalFlatsBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding-left: 36px;
+}
+
+.flatItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(114, 47, 55, 0.04);
+  transition: var(--transition-fast);
+}
+
+.flatItem:hover {
+  background: rgba(114, 47, 55, 0.08);
+  padding-left: 14px;
+}
+
+.flatDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-maroon);
+  flex-shrink: 0;
+}
+
+.flatLabel {
+  font-weight: 600;
+  color: var(--neutral-charcoal);
+  min-width: 100px;
+}
+
+.flatValue {
+  color: var(--text-secondary);
+  margin-left: auto;
+  font-weight: 500;
+}
+
 

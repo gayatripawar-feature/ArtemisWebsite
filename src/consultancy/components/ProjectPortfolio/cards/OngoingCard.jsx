@@ -1,8 +1,4 @@
 
-
-
-
-
 import React, { useEffect, useRef } from "react";
 import styles from "../ProjectPortfolio.module.css";
 
@@ -30,14 +26,22 @@ const OngoingCard = ({ project, index }) => {
       style={{ animationDelay: `${index * 0.15}s` }}
     >
       <div className={styles.cardImageWrap}>
-        <img
-          src={project.image}
-          alt={project.buildingName}
-          className={styles.cardImage}
-        />
-        <div className={styles.imageOverlay}>
-          {/* <span className={styles.overlayText}>View Project</span> */}
-        </div>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.buildingName}
+            className={styles.cardImage}
+          />
+        ) : (
+          <div className={styles.cardImagePlaceholder}>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.3">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span>Coming Soon</span>
+          </div>
+        )}
+        <div className={styles.imageOverlay}></div>
         <span className={`${styles.statusBadge} ${styles.badgeONGOING}`}>
           <span className={styles.statusPulse}></span>
           ONGOING
@@ -66,16 +70,44 @@ const OngoingCard = ({ project, index }) => {
             <span className={styles.detailLabel}>Total Land Area</span>
             <span className={styles.detailValue}>{project.totalLandArea}</span>
           </div>
-          <div className={styles.detailRow}>
-            <span className={styles.detailIcon}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </span>
-            <span className={styles.detailLabel}>Families</span>
-            <span className={styles.detailValue}>{project.families}</span>
-          </div>
+
+          {/* Show totalFlats breakdown if available, otherwise show families */}
+          {project.totalFlats ? (
+            <div className={styles.detailRow} style={{ flexDirection: "column", alignItems: "flex-start", gap: "6px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", width: "100%" }}>
+                <span className={styles.detailIcon}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 21h18" />
+                    <path d="M5 21V7l8-4v18" />
+                    <path d="M19 21V11l-6-4" />
+                    <path d="M9 9h1" /><path d="M9 13h1" /><path d="M9 17h1" />
+                  </svg>
+                </span>
+                <span className={styles.detailLabel}>Total Flats</span>
+              </div>
+              <div className={styles.totalFlatsBreakdown}>
+                {project.totalFlats.map((item, i) => (
+                  <div key={i} className={styles.flatItem}>
+                    <span className={styles.flatDot}></span>
+                    <span className={styles.flatLabel}>{item.label}</span>
+                    <span className={styles.flatValue}>{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className={styles.detailRow}>
+              <span className={styles.detailIcon}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+              <span className={styles.detailLabel}>Families</span>
+              <span className={styles.detailValue}>{project.families}</span>
+            </div>
+          )}
+
           <div className={styles.detailRow}>
             <span className={styles.detailIcon}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -98,10 +130,10 @@ const OngoingCard = ({ project, index }) => {
             <span className={styles.detailValue}>{project.location}</span>
           </div>
         </div>
-
       </div>
     </div>
   );
 };
 
 export default OngoingCard;
+

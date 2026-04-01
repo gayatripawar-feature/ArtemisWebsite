@@ -6,12 +6,19 @@ import styles from "./Erp.module.css";
 import { CheckCircle2, Phone, ArrowRight } from "lucide-react";
 import PageBanner from "../components/PageBanner";
 import heroImage from "../assets/images/ServicePage/services-hero.jpg";
-import Module2 from "../assets/images/ErpPage/Module2.jpg";
-import Module3 from "../assets/images/ErpPage/Module3.png";
 import Module5 from "../assets/images/ErpPage/Module5.jpg";
 import Module6 from "../assets/images/ErpPage/Module6.png";
-import Module7 from "../assets/images/ErpPage/Module7.png";
-import Module9 from "../assets/images/ErpPage/Module9.webp";
+import NewCompany from "../assets/images/ErpPage/new-company.jpg";
+import ProductDevelopment from "../assets/images/ErpPage/product-development.jpg";
+import AccountDepartment from "../assets/images/ErpPage/account-department.jpg";
+import Engineering from "../assets/images/ErpPage/engineering.jpg";
+import Inventory from "../assets/images/ErpPage/inventory.jpg";
+import SiteManagement from "../assets/images/ErpPage/site-management.jpg";
+import LandDealing from "../assets/images/ErpPage/land-dealing.jpg";
+import Training from "../assets/images/ErpPage/training.jpg";
+
+
+
 
 const modulesData = [
 
@@ -66,8 +73,7 @@ const modulesData = [
     name: "New Company Creation",
     hash: "new-company",
     subtitle: "Legal & Financial Setup Management",
-    image:
-      "https://images.pexels.com/photos/5668838/pexels-photo-5668838.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: NewCompany,
     features: [
       "MCA type of company creation",
       "ROF type of company creation",
@@ -83,7 +89,7 @@ const modulesData = [
     name: "Land Dealing",
     hash: "land-dealing",
     subtitle: "Complete Land Acquisition & Legal Due Diligence",
-    image:Module2,
+    image: LandDealing,
     features: [
       "Paper notice",
       "Litigation resolving",
@@ -106,7 +112,7 @@ const modulesData = [
     name: "Product Development",
     hash: "product-development",
     subtitle: "Pre-Construction Planning & Approvals",
-    image: Module3,
+    image: ProductDevelopment,
     features: [
       "Consultant onboarding",
       "Project feasibility report",
@@ -190,7 +196,7 @@ const modulesData = [
     name: "Account Department Module",
     hash: "account-department-module",
     subtitle: "Financial Control & Compliance",
-    image: Module7,
+    image: AccountDepartment,
     features: [
       "Bookkeeping",
       "Accounts payable & receivable",
@@ -209,8 +215,7 @@ const modulesData = [
     name: "Engineering Module",
     hash: "engineering-module",
     subtitle: "Planning, Execution & Quality Control",
-    image:
-      "https://images.pexels.com/photos/3862365/pexels-photo-3862365.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: Engineering,
     features: [
       "Work Breakdown Structure (WBS)",
       "Drawing management",
@@ -229,7 +234,7 @@ const modulesData = [
     name: "Inventory Management Module",
     hash: "inventory-management-module",
     subtitle: "Material Tracking & Control",
-    image:Module9,
+    image: Inventory,
     features: [
       "Inventory monitoring",
       "Inventory requisition",
@@ -268,8 +273,7 @@ const modulesData = [
     name: "Site Management Module",
     hash: "site-management-module",
     subtitle: "On-Site Execution & Coordination",
-    image:
-      "https://images.pexels.com/photos/3862625/pexels-photo-3862625.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: SiteManagement,
     features: [
       "Site setup",
       "Safety compliance",
@@ -286,8 +290,7 @@ const modulesData = [
     name: "Training & Implementation",
     hash: "training-implementation",
     subtitle: "Smooth ERP Adoption",
-    image:
-      "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: Training,
     features: [
       "User training",
       "Role-based system onboarding",
@@ -402,7 +405,7 @@ const Erp = () => {
                         <ul className={styles.featuresList}>
                           {mod.features.map((f) => (
                             <li className={styles.featureItem} key={f}>
-                              <span className={styles.featureArrow}>›</span>
+                              <span className={styles.featureArrow}>•</span>
                               {f}
                             </li>
                           ))}
