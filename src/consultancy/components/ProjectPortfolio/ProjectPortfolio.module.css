@@ -6,6 +6,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -17,6 +18,7 @@
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -24,23 +26,49 @@
 }
 
 @keyframes lineExpand {
-  from { width: 0; }
-  to { width: 40px; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 40px;
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.8); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.8);
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes arrowSlide {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(4px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
 }
 
 @keyframes expandContent {
@@ -49,6 +77,7 @@
     transform: scaleY(0.8);
     max-height: 0;
   }
+
   to {
     opacity: 1;
     transform: scaleY(1);
@@ -280,6 +309,10 @@
   opacity: 0;
   transform: translateY(40px);
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .projectCard::before {
@@ -349,12 +382,10 @@
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(114, 47, 55, 0.85) 0%,
-    rgba(114, 47, 55, 0.3) 40%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(114, 47, 55, 0.85) 0%,
+      rgba(114, 47, 55, 0.3) 40%,
+      transparent 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -469,6 +500,9 @@
 /* Card Body */
 .cardBody {
   padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .buildingName {
@@ -501,6 +535,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
 }
 
 .detailRow {
@@ -598,4 +633,19 @@
   font-weight: 500;
 }
 
+.dashboardBtnWrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 18px;
+}
 
+.liveDashboardBtn {
+  padding: 8px 18px !important;
+  font-size: 11px !important;
+  min-height: auto;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  text-transform: uppercase;
+
+}

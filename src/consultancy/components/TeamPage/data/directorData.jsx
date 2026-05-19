@@ -1,4 +1,6 @@
-
+import director1 from "../../../assets/images/Directors/director1.jpg";
+// import director2 from "../../../assets/images/Directors/director2.jpg";
+import director3 from "../../../assets/images/Directors/director3.jpg";
 
 export const directors = [
 
@@ -7,7 +9,7 @@ export const directors = [
     name: " Mr. Vikas Singh",
     title: "Director",
 
-    photo: "",
+    photo: director1,
     message: "",
   },
   {
@@ -23,7 +25,7 @@ export const directors = [
     name: " Ms. Priyanka Patil",
     title: "Director",
 
-    photo: "",
+    photo: director3,
     message: "",
   },
 ];

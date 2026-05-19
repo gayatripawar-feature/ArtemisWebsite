@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import styles from "../ProjectPortfolio.module.css";
+import Button from "../../Button";
 
 const OngoingCard = ({ project, index }) => {
   const cardRef = useRef(null);
@@ -128,6 +129,11 @@ const OngoingCard = ({ project, index }) => {
             </span>
             <span className={styles.detailLabel}>Location</span>
             <span className={styles.detailValue}>{project.location}</span>
+          </div>
+          <div className={styles.dashboardBtnWrap}>
+            <Button className={styles.liveDashboardBtn}>
+              Live Dashboard
+            </Button>
           </div>
         </div>
       </div>
