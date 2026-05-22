@@ -2,9 +2,12 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../ProjectPortfolio.module.css";
 import Button from "../../Button";
+import { useNavigate } from "react-router-dom";
 
 const OngoingCard = ({ project, index }) => {
   const cardRef = useRef(null);
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -130,8 +133,14 @@ const OngoingCard = ({ project, index }) => {
             <span className={styles.detailLabel}>Location</span>
             <span className={styles.detailValue}>{project.location}</span>
           </div>
+
           <div className={styles.dashboardBtnWrap}>
-            <Button className={styles.liveDashboardBtn}>
+            <Button
+              className={styles.liveDashboardBtn}
+              onClick={() =>
+                window.open(project.dashboardLink, "_blank")
+              }
+            >
               Live Dashboard
             </Button>
           </div>

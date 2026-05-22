@@ -6,6 +6,7 @@ import Projects from '../pages/Projects';
 import Contact from '../pages/Contact';
 import WhyArtemis from '../pages/WhyArtemis';
 import TeamPage from '../pages/TeamPage';
+import LiveDashboard from '../pages/LiveDashboard';
 /**
  * Route configuration array
  * Each route has: path, component, and label for navigation
@@ -47,6 +48,11 @@ export const routeConfig = [
     component: Contact,
     label: 'Contact Us',
   },
+  {
+    path: 'live-dashboard',
+    component: LiveDashboard,
+    label: 'Live Dashboard',
+  }
 ];
 
 /**
