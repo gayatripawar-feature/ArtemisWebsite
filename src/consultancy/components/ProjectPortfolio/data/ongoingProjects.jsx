@@ -9,7 +9,7 @@ const ongoingProjects = [
   {
     id: 1,
     image: PrathamVrindavan1,
-    buildingName: "PrathamYash Vrindavan",
+    buildingName: "Pratham Yash Vrindavan",
     projectBy: "Pratham Yash Builders",
     totalLandArea: "1.5 Acres",
     families: "260",
