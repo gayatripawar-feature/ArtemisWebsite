@@ -15,7 +15,7 @@ const ongoingProjects = [
     families: "260",
     configuration: "1, 2, 3 BHK Homes, Commercial Shops & Office Spaces",
     location: "Chovisawadi, Charholi, PCMC",
-    dashboardLink: "https://script.google.com/macros/s/AKfycbx57gou6ufJqny10nEgiLrFg1LAe2Zbn2umyhjosaqngnH7M79hYhfw6CXpkdCgJ7OJ/exec"
+    dashboardLink: "https://script.google.com/macros/s/AKfycbxSpUZk_cXoutIzf4S4b3T47_Rbi-W7uAh5C7rNYE-0T5UbLucIJyJPSlqvKZ1zcQBhnw/exec"
   },
   {
     id: 2,
